@@ -28,6 +28,12 @@ for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'ap
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
+const baseStyles = readFileSync(join(root, 'assets/css/base.css'), 'utf8');
+const secondaryButtonStyles = baseStyles.match(/\.button\.secondary\s*\{([^}]*)\}/)?.[1] ?? '';
+if (!secondaryButtonStyles.includes('color: var(--ink)')) {
+  failures.push('base.css: secondary 按钮必须显式设置深色文字，避免在深色容器中继承白色');
+}
+
 if (failures.length > 0) {
   console.error(failures.join('\n'));
   process.exit(1);

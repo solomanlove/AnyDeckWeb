@@ -136,6 +136,7 @@ input {
 }
 
 .button.secondary {
+  color: var(--ink);
   border-color: var(--line);
   background: var(--surface);
 }
