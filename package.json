@@ -1,0 +1,10 @@
+{
+  "name": "anydeck-help-center",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AnyDeck 产品官网、下载页与帮助中心",
+  "scripts": {
+    "test": "node tests/site.test.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}

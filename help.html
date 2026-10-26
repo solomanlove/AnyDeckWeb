@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、USB 与无线连接、投屏控制、应用文件管理、Logcat、Terminal 和故障排查。">
+    <meta name="theme-color" content="#10b981">
+    <title>帮助中心｜AnyDeck</title>
+    <link rel="icon" href="assets/images/app-logo.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="主导航">
+        <a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt="AnyDeck Logo"><span>AnyDeck</span></a>
+        <div class="nav-links" data-nav-links><a href="index.html">产品</a><a href="index.html#features">功能</a><a href="download.html">软件下载</a><a href="help.html" aria-current="page">帮助中心</a><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <div class="nav-actions"><a class="button primary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">反馈问题</a><button class="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false" data-menu-toggle>☰</button></div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB、无线连接、Logcat…" aria-label="搜索帮助文章" data-help-search></div></div>
+      </section>
+
+      <section class="section">
+        <div class="container help-layout">
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">投屏控制</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <div class="help-content">
+            <div class="help-grid">
+              <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
+            </div>
+
+            <div class="empty-state" data-empty-state>没有匹配的指南。可尝试“连接”“投屏”或“日志”。</div>
+
+            <article class="article" id="quick-start" data-search-item>
+              <h3>快速开始</h3>
+              <ol><li>在电脑安装 Android SDK platform-tools，并确认 <code>adb version</code> 可正常输出。</li><li>在 Android 设备开启 Developer options 与 USB debugging。</li><li>使用数据线连接设备，在手机弹窗中选择允许调试。</li><li>打开 AnyDeck，在设备列表选择目标设备，即可进入概览、控制、应用、文件或日志工作区。</li></ol>
+              <p>macOS 可使用 <code>brew install android-platform-tools scrcpy</code> 准备基础工具；Windows 可使用 Chocolatey 或 Scoop 安装 ADB。</p>
+            </article>
+
+            <article class="article" id="connect-usb" data-search-item>
+              <h3>通过 USB 连接 Android 设备</h3>
+              <ol><li>进入手机“关于手机”，连续点击版本号开启 Developer options。</li><li>在 Developer options 中开启 USB debugging。</li><li>连接数据线并将 USB 用途切换为文件传输或保持默认调试模式。</li><li>接受 RSA debugging authorization；如为个人电脑，可勾选始终允许。</li></ol>
+              <p>若设备显示 <code>unauthorized</code>，请解锁手机并重新确认授权；显示 <code>offline</code> 时可重新插拔 USB 后刷新。</p>
+            </article>
+
+            <article class="article" id="connect-wifi" data-search-item>
+              <h3>通过 Wi‑Fi 连接</h3>
+              <p>Android 11+ 推荐使用 Wireless debugging 的 QR code 或 pairing code。电脑与手机需要在同一可互访局域网。</p>
+              <ol><li>先在手机打开 Wireless debugging。</li><li>在 AnyDeck 设备管理中选择配对方式，录入 IP、pairing port 与 pairing code，或使用二维码流程。</li><li>配对成功后选择 debugging port 建立连接。</li></ol>
+              <p>连接超时通常与 VPN、系统 firewall、路由器 AP isolation 或 IP/port 变化有关。</p>
+            </article>
+
+            <article class="article" id="mirroring" data-search-item>
+              <h3>打开投屏并控制设备</h3>
+              <p>从设备行或工作区顶部打开 Mirror window。投屏窗口支持鼠标触控、键盘输入、Back、Home、Power、音量、旋转、截图与独立窗口缩放。</p>
+              <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android Back。</li><li>鼠标中键默认映射为 Android Home。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+            </article>
+
+            <article class="article" id="app-files" data-search-item>
+              <h3>管理应用与文件</h3>
+              <p>应用工作区支持检索、APK 安装、启动、卸载、清除数据、冻结/解冻与导出。文件工作区用于浏览设备存储，并支持上传、下载与删除。</p>
+              <ul><li>安装 APK：将文件拖入设备窗口或使用安装入口。</li><li>批量操作：先进入多选状态，再选择目标应用执行动作。</li><li>文件传输：确认设备剩余空间与目标目录权限；系统保护目录通常需要 Root。</li></ul>
+            </article>
+
+            <article class="article" id="diagnostics" data-search-item>
+              <h3>使用 Logcat、Terminal 与布局分析</h3>
+              <p>Logcat 适合观察实时系统与 App 日志；Terminal 提供交互式 ADB Shell；布局分析会读取当前界面的 XML hierarchy，并与截图区域关联。</p>
+              <ol><li>先确认目标设备，避免日志与命令发往其他连接。</li><li>Logcat 使用 package、tag 或关键词缩小范围。</li><li>需要复现崩溃时，先清空无关日志，再执行复现步骤。</li><li>布局抓取为空时，确认页面未使用受保护 Surface，并尝试刷新。</li></ol>
+            </article>
+
+            <article class="article" id="troubleshooting" data-search-item>
+              <h3>常见连接问题</h3>
+              <ul><li><strong>找不到 ADB：</strong>将 platform-tools 加入 PATH，或从 Android SDK 目录执行。</li><li><strong>设备未出现：</strong>更换支持数据传输的线缆与 USB 端口，随后运行 <code>adb devices</code> 交叉检查。</li><li><strong>无线连接被拒绝：</strong>确认配对端口与连接端口没有混用，并检查手机 IP 是否变化。</li><li><strong>投屏启动失败：</strong>确认只有一个有效设备目标、USB/Wi‑Fi 链路稳定，并查看 AnyDeck 本地诊断日志。</li><li><strong>仍无法解决：</strong>导出诊断信息后，在 GitHub Issues 描述系统版本、设备型号、连接方式与复现步骤。</li></ul>
+              <a class="button secondary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">前往 GitHub Issues ↗</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="#connect-wifi">无线连接</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>最后更新：2026-10-26</span></div></div></footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
