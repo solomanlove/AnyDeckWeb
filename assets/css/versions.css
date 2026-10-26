@@ -1,0 +1,239 @@
+.version-reference {
+  background: linear-gradient(180deg, #f7faf8, #eef7f3);
+}
+
+.version-heading {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: end;
+  gap: 60px;
+}
+
+.text-link,
+.source-link {
+  display: inline-flex;
+  margin-top: 16px;
+  color: var(--brand-dark);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.version-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 42px;
+}
+
+.version-preview {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 18px 50px rgba(20, 64, 48, 0.06);
+}
+
+.version-card-head {
+  display: flex;
+  min-height: 82px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px;
+  color: #fff;
+}
+
+.version-card-head span {
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.version-card-head b {
+  max-width: 120px;
+  text-align: right;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  opacity: 0.78;
+}
+
+.android-version .version-card-head { background: linear-gradient(135deg, #1a8060, #10b981); }
+.harmony-version .version-card-head { background: linear-gradient(135deg, #2765d8, #5b8ff9); }
+.ios-version .version-card-head { background: linear-gradient(135deg, #2d3543, #69798e); }
+
+.version-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.version-row strong {
+  font-size: 14px;
+}
+
+.version-row span {
+  color: var(--brand-dark);
+  font: 700 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.version-row small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.version-card-note {
+  margin: 0;
+  padding: 15px 20px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.versions-hero {
+  background:
+    radial-gradient(circle at 72% 15%, rgba(57, 118, 246, 0.13), transparent 35%),
+    radial-gradient(circle at 88% 72%, rgba(16, 185, 129, 0.11), transparent 26%);
+}
+
+.version-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.version-jump a {
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--brand-dark);
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.version-detail {
+  scroll-margin-top: 70px;
+}
+
+.version-detail.alt {
+  background: #eef5f2;
+}
+
+.version-detail-grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: start;
+  gap: 68px;
+}
+
+.version-intro {
+  position: sticky;
+  top: 112px;
+}
+
+.version-intro h2 {
+  font-size: clamp(34px, 4vw, 50px);
+}
+
+.version-intro code {
+  color: var(--brand-dark);
+  font-weight: 700;
+}
+
+.version-table-wrap {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 20px 60px rgba(20, 64, 48, 0.07);
+}
+
+.version-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.version-table th,
+.version-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+}
+
+.version-table th {
+  color: #52645d;
+  background: #f1f6f3;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.version-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.version-table td strong {
+  color: var(--brand-dark);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.status-chip {
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #17634c;
+  background: #e7f8f1;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.status-chip.new {
+  color: #fff;
+  background: var(--brand-dark);
+}
+
+.version-callout {
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+  border-top: 1px solid var(--line);
+  color: #536760;
+  background: #f7faf8;
+  font-size: 12px;
+}
+
+.version-callout strong {
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .version-heading,
+  .version-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .version-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .version-intro {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .version-table-wrap {
+    overflow-x: auto;
+  }
+
+  .version-table {
+    min-width: 560px;
+  }
+
+  .version-table th,
+  .version-table td {
+    padding: 12px 14px;
+  }
+}

@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const pages = ['index.html', 'download.html', 'help.html'];
+const pages = ['index.html', 'download.html', 'help.html', 'versions.html'];
 const failures = [];
 
 for (const page of pages) {
@@ -31,6 +31,15 @@ for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'ai
 const home = readFileSync(join(root, 'index.html'), 'utf8');
 for (const positioning of ['任何设备，<br>一个控制台。', 'Any + Deck', 'Android、iOS 与 HarmonyOS', 'The universal desktop control deck for any mobile OS.']) {
   if (!home.includes(positioning)) failures.push(`index.html: 缺少品牌定位 ${positioning}`);
+}
+
+const versions = readFileSync(join(root, 'versions.html'), 'utf8');
+for (const versionCopy of ['Android 17', 'API 37', 'Android 12', 'API 31', 'HarmonyOS 7.0.0', 'API 26.0.0', 'HarmonyOS 6.0.0', 'API 20', 'iOS 27', 'Xcode 27', 'Deployment Target', '没有 Android 式 API Level']) {
+  if (!versions.includes(versionCopy)) failures.push(`versions.html: 缺少版本对照 ${versionCopy}`);
+}
+
+for (const versionEntry of ['Platform version reference', 'versions.html', 'Version ↔ API Level', 'Version ↔ API Version', 'Version ↔ Xcode / SDK']) {
+  if (!home.includes(versionEntry)) failures.push(`index.html: 缺少版本参考入口 ${versionEntry}`);
 }
 
 for (const videoCastCopy of ['Android 与 HarmonyOS', '抖音', '哔哩哔哩', '小红书', '爱奇艺', 'help.html#video-cast']) {

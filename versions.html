@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AnyDeck 系统版本参考：Android Version 与 API Level、HarmonyOS Version 与 API Version，以及 iOS、Xcode、SDK 和 Deployment Target 对照。">
+    <meta name="theme-color" content="#10b981">
+    <title>系统版本参考｜AnyDeck</title>
+    <link rel="icon" href="assets/images/app-logo.png">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="主导航">
+        <a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt="AnyDeck Logo"><span>AnyDeck</span></a>
+        <div class="nav-links" data-nav-links><a href="index.html">产品</a><a href="index.html#features">功能</a><a href="versions.html" aria-current="page">版本参考</a><a href="download.html">软件下载</a><a href="help.html">帮助中心</a><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub ↗</a></div>
+        <div class="nav-actions"><a class="button primary" href="help.html">查看帮助</a><button class="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false" data-menu-toggle>☰</button></div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero versions-hero">
+        <div class="container"><p class="eyebrow">Platform version reference</p><h1>三套版本体系，<br>一张参考表。</h1><p class="lede">Android、HarmonyOS 与 iOS 的版本编号不能直接横向等同。这里按各平台官方口径整理开发时真正需要核对的 API 与工具链关系。</p><div class="version-jump"><a href="#android">Android</a><a href="#harmony">HarmonyOS</a><a href="#ios">iOS</a></div></div>
+      </section>
+
+      <section class="section version-detail" id="android">
+        <div class="container version-detail-grid">
+          <div class="version-intro"><p class="eyebrow">Android</p><h2>Version ↔ API Level</h2><p>每个 Android 平台版本对应一个整数 API Level。应用还需分别检查 <code>minSdk</code>、<code>targetSdk</code> 与 <code>compileSdk</code>。</p><a class="source-link" href="https://developer.android.com/guide/topics/manifest/uses-sdk-element" target="_blank" rel="noreferrer">Android 官方对照 ↗</a></div>
+          <div class="version-table-wrap"><table class="version-table"><thead><tr><th>Android Version</th><th>API Level</th><th>版本状态</th></tr></thead><tbody>
+            <tr><td>Android 17</td><td><strong>API 37</strong></td><td><span class="status-chip new">最新</span></td></tr>
+            <tr><td>Android 16</td><td><strong>API 36</strong></td><td><span class="status-chip">稳定</span></td></tr>
+            <tr><td>Android 15</td><td><strong>API 35</strong></td><td><span class="status-chip">稳定</span></td></tr>
+            <tr><td>Android 14</td><td><strong>API 34</strong></td><td>稳定</td></tr>
+            <tr><td>Android 13</td><td><strong>API 33</strong></td><td>历史</td></tr>
+            <tr><td>Android 12L</td><td><strong>API 32</strong></td><td>大屏专项</td></tr>
+            <tr><td>Android 12</td><td><strong>API 31</strong></td><td>历史</td></tr>
+            <tr><td>Android 11</td><td><strong>API 30</strong></td><td>历史</td></tr>
+            <tr><td>Android 10</td><td><strong>API 29</strong></td><td>历史</td></tr>
+            <tr><td>Android 9</td><td><strong>API 28</strong></td><td>历史</td></tr>
+            <tr><td>Android 8.1 / 8.0</td><td><strong>API 27 / 26</strong></td><td>历史</td></tr>
+            <tr><td>Android 7.1 / 7.0</td><td><strong>API 25 / 24</strong></td><td>历史</td></tr>
+            <tr><td>Android 6 / 5.1 / 5.0</td><td><strong>API 23 / 22 / 21</strong></td><td>Legacy</td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <section class="section version-detail alt" id="harmony">
+        <div class="container version-detail-grid">
+          <div class="version-intro"><p class="eyebrow">HarmonyOS</p><h2>Version ↔ API Version</h2><p>HarmonyOS NEXT 使用 API Version、<code>targetSdkVersion</code> 与 <code>compatibleSdkVersion</code>。同一大版本可能包含多个 API 版本，不能按 Android API Level 推断。</p><a class="source-link" href="https://developer.huawei.com/consumer/en/doc/harmonyos-releases/upgrade-adaptation" target="_blank" rel="noreferrer">HarmonyOS 官方升级说明 ↗</a></div>
+          <div class="version-table-wrap"><table class="version-table harmony-table"><thead><tr><th>HarmonyOS Version</th><th>API Version</th><th>建议工具链</th></tr></thead><tbody>
+            <tr><td>HarmonyOS 7.0.0</td><td><strong>API 26.0.0</strong></td><td>DevEco Studio 26.0.0</td></tr>
+            <tr><td>HarmonyOS 6.1.1</td><td><strong>API 24</strong></td><td>DevEco Studio 6.1.1</td></tr>
+            <tr><td>HarmonyOS 6.1.0</td><td><strong>API 23</strong></td><td>DevEco Studio 6.1.0</td></tr>
+            <tr><td>HarmonyOS 6.0.2</td><td><strong>API 22</strong></td><td>DevEco Studio 6.1.x</td></tr>
+            <tr><td>HarmonyOS 6.0.1</td><td><strong>API 21</strong></td><td>DevEco Studio 6.0.x</td></tr>
+            <tr><td>HarmonyOS 6.0.0</td><td><strong>API 20</strong></td><td>DevEco Studio 6.0.0</td></tr>
+            <tr><td>HarmonyOS 5.1.1 / 5.1.0</td><td><strong>API 19 / 18</strong></td><td>DevEco Studio 6.0+</td></tr>
+            <tr><td>HarmonyOS 5.0.5</td><td><strong>API 17</strong></td><td>DevEco Studio 5.x</td></tr>
+            <tr><td>HarmonyOS 5.0.x</td><td><strong>API 12–16</strong></td><td>按具体 SDK 核对</td></tr>
+            <tr><td>HarmonyOS 4.x</td><td><strong>API 9–11</strong></td><td>历史工具链</td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <section class="section version-detail" id="ios">
+        <div class="container version-detail-grid">
+          <div class="version-intro"><p class="eyebrow">iOS / iPadOS</p><h2>Version ↔ Xcode / SDK</h2><p>iOS 没有 Android 式 API Level。开发兼容性由 Xcode 自带 SDK、项目的 Deployment Target，以及 <code>@available</code> 版本守卫共同决定。</p><a class="source-link" href="https://developer.apple.com/xcode/system-requirements" target="_blank" rel="noreferrer">Apple 官方工具链矩阵 ↗</a></div>
+          <div class="version-table-wrap"><table class="version-table ios-table"><thead><tr><th>iOS Version</th><th>Xcode</th><th>SDK / Deployment Target</th></tr></thead><tbody>
+            <tr><td>iOS 27</td><td><strong>Xcode 27</strong></td><td>iOS 27 SDK · Target iOS 15–27</td></tr>
+            <tr><td>iOS 26</td><td><strong>Xcode 26</strong></td><td>iOS 26.x SDK · Target iOS 15–26.x</td></tr>
+            <tr><td>iOS 18</td><td><strong>Xcode 16</strong></td><td>iOS 18.x SDK · Target iOS 15–18</td></tr>
+            <tr><td>iOS 17</td><td><strong>Xcode 15</strong></td><td>iOS 17 SDK</td></tr>
+            <tr><td>iOS 16</td><td><strong>Xcode 14</strong></td><td>iOS 16 SDK</td></tr>
+            <tr><td>iOS 15</td><td><strong>Xcode 13</strong></td><td>iOS 15 SDK</td></tr>
+          </tbody></table><div class="version-callout"><strong>不要混淆三个概念：</strong><span>当前设备系统版本 ≠ 编译使用的 SDK ≠ App 可安装的最低 Deployment Target。</span></div></div>
+        </div>
+      </section>
+
+      <section class="section"><div class="container cta"><div><h2>需要在真机上确认版本？</h2><p>AnyDeck 会在设备概览中读取当前系统版本，并按平台展示对应版本信息。</p></div><a class="button primary" href="help.html#quick-start">连接设备查看</a></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>万能控制台：任何设备，一个控制台。</p></div><div><h3>产品</h3><div class="footer-links"><a href="index.html#features">功能说明</a><a href="versions.html">版本参考</a><a href="download.html">软件下载</a><a href="help.html">帮助中心</a></div></div><div><h3>参考</h3><div class="footer-links"><a href="#android">Android API</a><a href="#harmony">HarmonyOS API</a><a href="#ios">iOS SDK</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>版本资料最后核对：2026-10-26</span></div></div></footer>
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>
