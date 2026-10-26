@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、运行控制台、三平台版本参考、模拟器管理、应用分析、无线投屏与 AI MCP 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、端口转发、设备 HTTP 正向代理、运行控制台、模拟器管理、应用分析、无线投屏与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -173,6 +173,40 @@
               <div class="version-row"><strong>iOS 18</strong><span>Xcode 16</span><small>SDK 18</small></div>
               <p class="version-card-note">iOS 没有 Android 式 API Level，应结合 SDK 与 Deployment Target 判断兼容性。</p>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section network-tools" id="network-tools">
+        <div class="network-tools-grid container">
+          <div class="network-tools-copy">
+            <p class="eyebrow">Network debugging</p>
+            <h2>代理与端口，<br>一眼看清流向。</h2>
+            <p class="lede">为 Android 设备设置 HTTP 正向代理，并集中管理 Android / HarmonyOS 的 Forward Port Mapping 与 Android Reverse Port Mapping。</p>
+            <div class="network-pills" aria-label="代理与端口转发能力">
+              <span>设备 HTTP 正向代理</span><span>Forward</span><span>Reverse</span><span>TCP</span>
+            </div>
+            <p class="network-boundary">HTTP Proxy 仅支持 Android；Forward 支持 Android / HarmonyOS；Reverse 当前支持 Android。所有映射均明确展示电脑端与设备端口。</p>
+            <a class="button secondary" href="help.html#network-tools">查看代理与端口转发指南 →</a>
+          </div>
+          <div class="network-flow-panel" aria-label="AnyDeck 代理与端口流向示意">
+            <div class="network-panel-head"><span><i></i>Network Tools</span><b>3 条规则生效</b></div>
+            <article class="network-flow-row proxy-flow">
+              <div><span class="network-type">HTTP Proxy</span><small>Android</small></div>
+              <div class="flow-path"><strong>Android</strong><span>→</span><code>192.168.1.8:8888</code><span>→</span><strong>Internet</strong></div>
+              <b class="network-status">已启用</b>
+            </article>
+            <article class="network-flow-row">
+              <div><span class="network-type">Forward</span><small>Android / HarmonyOS</small></div>
+              <div class="flow-path"><strong>电脑 localhost:9222</strong><span>→</span><strong>设备 localhost:9222</strong></div>
+              <b class="network-status">TCP</b>
+            </article>
+            <article class="network-flow-row reverse-flow">
+              <div><span class="network-type">Reverse</span><small>Android</small></div>
+              <div class="flow-path"><strong>设备 localhost:8081</strong><span>→</span><strong>电脑 localhost:8081</strong></div>
+              <b class="network-status">自动应用</b>
+            </article>
+            <p class="network-panel-note"><i></i>方向、平台和端口状态始终可见，删除规则前可再次核对目标设备。</p>
           </div>
         </div>
       </section>

@@ -24,7 +24,7 @@ for (const page of pages) {
 }
 
 const help = readFileSync(join(root, 'help.html'), 'utf8');
-for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
+for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
@@ -60,6 +60,14 @@ for (const developerToolCopy of ['模拟器管理', 'Android AVD', 'DevEco Emula
 
 for (const consoleCopy of ['Runtime console', 'AnyDeck Console', '关键词搜索', '关键日志', '隐藏心跳', '导出 .log', '不等同于手机 Logcat', 'help.html#console']) {
   if (!home.includes(consoleCopy) && !help.includes(consoleCopy)) failures.push(`网站缺少控制台信息 ${consoleCopy}`);
+}
+
+for (const networkCopy of ['Network debugging', '设备 HTTP 正向代理', 'Forward Port Mapping', 'Reverse Port Mapping', 'Android / HarmonyOS', '电脑 localhost:9222', '设备 localhost:8081', 'help.html#network-tools']) {
+  if (!home.includes(networkCopy)) failures.push(`index.html: 缺少代理与端口转发信息 ${networkCopy}`);
+}
+
+for (const networkHelpCopy of ['电脑 localhost → 设备 localhost', '设备 localhost → 电脑 localhost', '端口范围为 1–65535', 'SOCKS', 'PAC', 'adb reverse']) {
+  if (!help.includes(networkHelpCopy)) failures.push(`help.html: 缺少代理与端口转发帮助信息 ${networkHelpCopy}`);
 }
 
 for (const mcpCopy of ['AI MCP Server', '22 项 MCP Tools', 'take_screenshot', 'query_app_crashes', 'execute_shell', 'http://127.0.0.1:8765/sse', 'help.html#ai-mcp']) {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、系统版本参考、运行控制台、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP、手机视频投屏和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、设备 HTTP 正向代理、端口转发、运行控制台、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,17 +20,18 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：控制台、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：端口转发、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">API</div><h3>系统版本参考</h3><p>对照 Android、HarmonyOS 与 iOS 的版本和开发工具链。</p><a href="versions.html">查看对照表 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP Proxy，并管理 Forward / Reverse 端口映射。</p><a href="#network-tools">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
@@ -60,6 +61,16 @@
               <p>Android 11+ 推荐使用 Wireless debugging 的 QR code 或 pairing code。电脑与手机需要在同一可互访局域网。</p>
               <ol><li>先在手机打开 Wireless debugging。</li><li>在 AnyDeck 设备管理中选择配对方式，录入 IP、pairing port 与 pairing code，或使用二维码流程。</li><li>配对成功后选择 debugging port 建立连接。</li></ol>
               <p>连接超时通常与 VPN、系统 firewall、路由器 AP isolation 或 IP/port 变化有关。</p>
+            </article>
+
+            <article class="article" id="network-tools" data-search-item>
+              <h3>配置 HTTP 正向代理与端口转发</h3>
+              <p>三种能力解决的问题不同：设备 HTTP 正向代理把 Android 的 HTTP 流量交给电脑上的代理服务；Forward Port Mapping 让电脑访问设备端 TCP 服务；Reverse Port Mapping 让 Android 应用访问电脑上的本地开发服务。</p>
+              <ol><li><strong>Android HTTP Proxy：</strong>填写电脑在局域网中的 IPv4 地址与代理端口，例如 <code>192.168.1.8:8888</code>，应用后可回读当前值，也可一键清除恢复直连。</li><li><strong>Forward：</strong>填写电脑端与设备端 TCP 端口，流向为“电脑 localhost → 设备 localhost”。Android 与 HarmonyOS 均支持手动创建、查看和删除。</li><li><strong>Reverse：</strong>填写设备端与电脑端 TCP 端口，流向为“设备 localhost → 电脑 localhost”。当前支持 Android，可保存预设并在设备连接后自动应用。</li></ol>
+              <pre class="code-panel"><code>adb forward tcp:9222 tcp:9222
+hdc fport tcp:9222 tcp:9222
+adb reverse tcp:8081 tcp:8081</code></pre>
+              <p><strong>能力边界：</strong>端口映射仅支持 TCP，端口范围为 1–65535。设备 HTTP Proxy 当前仅支持 Android 全局 HTTP proxy，不等同于 VPN，也不支持身份认证、SOCKS、PAC 或按 App 分流；HarmonyOS 暂无对应的 HDC Proxy 配置。</p>
             </article>
 
             <article class="article" id="mirroring" data-search-item>
