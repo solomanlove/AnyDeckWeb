@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、iOS AirPlay 无线投屏、手机视频投屏与 AI MCP 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、运行控制台、模拟器管理、应用分析、iOS AirPlay 无线投屏、手机视频投屏与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -140,6 +140,42 @@
                 <span>组件 <b>42</b></span><span>权限 <b>18</b></span><span>签名 <b>2</b></span><span>原生库 <b>12</b></span>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section runtime-console" id="console">
+        <div class="console-grid container">
+          <div class="console-copy">
+            <p class="eyebrow">Runtime console</p>
+            <h2>每一次异常，<br>都有迹可循。</h2>
+            <p class="lede">控制台实时汇总 AnyDeck 主窗口与子窗口的运行日志、异常堆栈和 ADB / HDC 命令失败，让连接、投屏与工具调用的问题集中可查。</p>
+            <div class="console-capabilities" aria-label="控制台功能">
+              <span>关键词搜索</span><span>关键日志</span><span>隐藏心跳</span><span>自动滚动</span><span>导出 .log</span>
+            </div>
+            <p class="console-boundary">无需连接手机即可查看。控制台记录的是 AnyDeck 桌面 App 日志；手机系统与 App 日志请使用 Logcat。</p>
+            <a class="button secondary" href="help.html#console">查看控制台使用指南 →</a>
+          </div>
+          <div class="console-window" aria-label="AnyDeck 运行控制台示意">
+            <div class="console-titlebar">
+              <span><i></i><i></i><i></i></span>
+              <strong>AnyDeck Console</strong>
+              <b>Live</b>
+            </div>
+            <div class="console-toolbar">
+              <span class="console-search">搜索日志、窗口或命令…</span>
+              <span class="console-filter active">W / E / F</span>
+              <span class="console-filter">隐藏心跳</span>
+              <span class="console-export">导出 .log</span>
+            </div>
+            <div class="console-lines">
+              <div><time>14:28:06.120</time><b class="level info">I</b><span class="source">[main]</span><code>Device tracker started · Android / HarmonyOS / iOS</code></div>
+              <div><time>14:28:07.482</time><b class="level info">I</b><span class="source">[mirror-2]</span><code>Video session ready · 1080 × 2400</code></div>
+              <div><time>14:28:10.031</time><b class="level warn">W</b><span class="source">[main]</span><code>ADB command retry · device offline</code></div>
+              <div class="error-line"><time>14:28:12.447</time><b class="level error">E</b><span class="source">[airplay]</span><code>Receiver reconnect requested · network changed</code></div>
+              <div><time>14:28:12.801</time><b class="level info">I</b><span class="source">[airplay]</span><code>Session restored · audio queue running</code></div>
+            </div>
+            <div class="console-status"><span><i></i>实时记录中</span><span>5 条可见 · 自动滚动已开启</span></div>
           </div>
         </div>
       </section>

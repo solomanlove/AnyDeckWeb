@@ -24,7 +24,7 @@ for (const page of pages) {
 }
 
 const help = readFileSync(join(root, 'help.html'), 'utf8');
-for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
+for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
@@ -47,6 +47,10 @@ for (const airplayHelpCopy of ['控制中心', '屏幕镜像', '停止镜像', '
 
 for (const developerToolCopy of ['模拟器管理', 'Android AVD', 'DevEco Emulator', 'Xcode Simulator', '应用分析', 'Target SDK', '原生库', 'help.html#emulator-management', 'help.html#app-analysis']) {
   if (!home.includes(developerToolCopy)) failures.push(`index.html: 缺少开发工具信息 ${developerToolCopy}`);
+}
+
+for (const consoleCopy of ['Runtime console', 'AnyDeck Console', '关键词搜索', '关键日志', '隐藏心跳', '导出 .log', '不等同于手机 Logcat', 'help.html#console']) {
+  if (!home.includes(consoleCopy) && !help.includes(consoleCopy)) failures.push(`网站缺少控制台信息 ${consoleCopy}`);
 }
 
 for (const mcpCopy of ['AI MCP Server', '22 项 MCP Tools', 'take_screenshot', 'query_app_crashes', 'execute_shell', 'http://127.0.0.1:8765/sse', 'help.html#ai-mcp']) {

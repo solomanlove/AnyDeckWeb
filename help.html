@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP、手机视频投屏、Logcat、Terminal 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、运行控制台、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP、手机视频投屏、Logcat、Terminal 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,12 +20,12 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：AirPlay、模拟器、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：控制台、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
@@ -35,6 +35,7 @@
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">›_</div><h3>运行控制台</h3><p>汇总桌面 App 日志、异常堆栈与命令失败。</p><a href="#console">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">✦</div><h3>AI MCP</h3><p>让 Cursor、Claude Desktop 或 AI Agent 调用真实设备工具。</p><a href="#ai-mcp">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
             </div>
@@ -92,6 +93,13 @@
               <p>应用分析统一展示名称、包名或 Bundle、版本、SDK、ABI、DEBUG 状态与文件信息，并按 Tab 查看组件、权限、Metadata、DEX、签名证书和原生库。</p>
               <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过 Finder 使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、Minimum SDK、Target SDK 与 ABI。</li><li>切换组件、权限、签名和原生库 Tab，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
               <p><strong>边界说明：</strong>本地 APK 的权限表示 Manifest 声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
+            </article>
+
+            <article class="article" id="console" data-search-item>
+              <h3>使用 AnyDeck 运行控制台</h3>
+              <p>运行控制台用于排查 AnyDeck 桌面 App 自身的问题。它会实时汇总主窗口与投屏等子窗口的运行日志、异常堆栈，以及 ADB / HDC 命令失败，无需连接手机也可打开。</p>
+              <ol><li>打开 AnyDeck 的“控制台”独立窗口，查看当前会话的实时日志。</li><li>使用关键词搜索窗口来源、命令或错误内容；打开“仅关键日志”可只看 Warning、Error 与 Fatal。</li><li>按需隐藏设备心跳日志，并开启自动滚动跟随最新记录。</li><li>复现问题后复制相关记录，或使用“导出”保存包含保留历史会话的 <code>.log</code> 诊断文件。</li><li>分享日志前检查其中可能存在的设备标识、本地路径或业务数据。</li></ol>
+              <p><strong>日志边界：</strong>清空控制台只会清理当前显示，不会删除磁盘中的诊断记录。控制台不等同于手机 Logcat，也不会采集未转发到 Dart 的 native stderr 或系统 native crash report。</p>
             </article>
 
             <article class="article" id="ai-mcp" data-search-item>
