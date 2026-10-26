@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、模拟器管理、应用分析、手机视频投屏、Logcat、Terminal 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、模拟器管理、应用分析、AI MCP、手机视频投屏、Logcat、Terminal 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,12 +20,12 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB、无线连接、Logcat…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB、模拟器、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
@@ -34,6 +34,7 @@
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">✦</div><h3>AI MCP</h3><p>让 Cursor、Claude Desktop 或 AI Agent 调用真实设备工具。</p><a href="#ai-mcp">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
             </div>
 
@@ -83,6 +84,20 @@
               <p>应用分析统一展示名称、包名或 Bundle、版本、SDK、ABI、DEBUG 状态与文件信息，并按 Tab 查看组件、权限、Metadata、DEX、签名证书和原生库。</p>
               <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过 Finder 使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、Minimum SDK、Target SDK 与 ABI。</li><li>切换组件、权限、签名和原生库 Tab，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
               <p><strong>边界说明：</strong>本地 APK 的权限表示 Manifest 声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
+            </article>
+
+            <article class="article" id="ai-mcp" data-search-item>
+              <h3>连接 AI Client 与 AnyDeck MCP Server</h3>
+              <p>AnyDeck 通过 HTTP SSE 提供 22 项 MCP Tools，覆盖设备发现、截图与 UI 操作、应用生命周期、Logcat、Crash、文件传输和受控 Shell。不同平台实际可用工具以当前设备能力为准。</p>
+              <ol><li>进入 AnyDeck 的“AI MCP”页面，确认监听地址与端口后启动服务。</li><li>按需启用工具；不需要的写入、卸载、清数据或 Shell 工具保持关闭。</li><li>在 Cursor、Claude Desktop、Cline、Windsurf 或其他 MCP Client 中添加 SSE 地址。</li><li>连接成功后先调用 <code>list_devices</code>，再让 AI 针对明确的设备执行截图、分析或诊断操作。</li><li>在 AnyDeck 审计日志中检查请求参数、耗时、结果和错误。</li></ol>
+              <pre class="code-panel"><code>{
+  "mcpServers": {
+    "anydeck": {
+      "url": "http://127.0.0.1:8765/sse"
+    }
+  }
+}</code></pre>
+              <p><strong>安全说明：</strong>默认仅监听本机地址，并提供工具级开关、高危命令黑名单和调用审计。MCP Client 获得的是实际设备操作能力，只连接可信 Client，并在执行卸载、清数据、文件写入或 Shell 前核对目标设备与参数。</p>
             </article>
 
             <article class="article" id="app-files" data-search-item>

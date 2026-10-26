@@ -4,7 +4,8 @@
   .help-layout,
   .brand-story-grid,
   .media-cast-grid,
-  .developer-tool-grid {
+  .developer-tool-grid,
+  .ai-mcp-grid {
     grid-template-columns: 1fr;
   }
 
@@ -145,6 +146,18 @@
 
   .analysis-tabs span:nth-child(-n + 2) {
     border-bottom: 1px solid var(--line);
+  }
+
+  .mcp-tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mcp-call {
+    grid-template-columns: 1fr auto;
+  }
+
+  .mcp-call span {
+    display: none;
   }
 
   .platform-row,

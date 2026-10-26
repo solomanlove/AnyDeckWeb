@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、手机视频投屏与 AI 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、手机视频投屏与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -140,6 +140,34 @@
                 <span>组件 <b>42</b></span><span>权限 <b>18</b></span><span>签名 <b>2</b></span><span>原生库 <b>12</b></span>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ai-mcp" id="ai-mcp">
+        <div class="ai-mcp-grid container">
+          <div class="ai-mcp-copy">
+            <p class="eyebrow">AI × Real devices</p>
+            <h2>让 AI 不只写代码，<br>还能操作真实设备。</h2>
+            <p class="lede">AnyDeck 内置 AI MCP Server，把设备、UI、应用、日志、文件与受控 Shell 能力转化为标准 MCP Tools，供 AI Client 直接调用。</p>
+            <div class="client-pills" aria-label="兼容的 AI Client">
+              <span>Cursor</span><span>Claude Desktop</span><span>Cline</span><span>Windsurf</span><span>AI Agents</span>
+            </div>
+            <div class="mcp-endpoint"><i></i><code>http://127.0.0.1:8765/sse</code><span>HTTP SSE</span></div>
+            <p class="mcp-security">默认本机监听 · 22 项 MCP Tools · 工具级开关 · 高危命令拦截 · 调用审计</p>
+            <a class="button secondary" href="help.html#ai-mcp">查看 AI MCP 接入指南 →</a>
+          </div>
+          <div class="mcp-console" aria-label="AnyDeck AI MCP 工具面板示意">
+            <div class="mcp-console-head"><span><i></i>AnyDeck MCP Server</span><b>Running</b></div>
+            <div class="mcp-tool-grid">
+              <div><span>Device</span><strong>list_devices</strong><small>发现设备与读取详情</small></div>
+              <div><span>UI &amp; Vision</span><strong>take_screenshot</strong><small>截图、布局与触控输入</small></div>
+              <div><span>Application</span><strong>launch_app</strong><small>安装、启动与生命周期</small></div>
+              <div><span>Diagnostics</span><strong>query_app_crashes</strong><small>Logcat、Crash 与 ANR</small></div>
+              <div><span>Files</span><strong>file_pull</strong><small>浏览、上传与下载</small></div>
+              <div><span>Controlled Shell</span><strong>execute_shell</strong><small>安全规则与审计保护</small></div>
+            </div>
+            <div class="mcp-call"><span>tools/call</span><code>take_screenshot · device_01</code><b>200 · 284ms</b></div>
           </div>
         </div>
       </section>
