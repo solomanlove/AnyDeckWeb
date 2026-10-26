@@ -1,7 +1,8 @@
 @media (max-width: 900px) {
   .hero-grid,
   .gallery,
-  .help-layout {
+  .help-layout,
+  .brand-story-grid {
     grid-template-columns: 1fr;
   }
 
@@ -91,8 +92,23 @@
   .requirements,
   .help-grid,
   .steps,
+  .name-formula,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .formula-plus {
+    justify-self: center;
+  }
+
+  .formula-result {
+    grid-column: auto;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .formula-result strong {
+    text-align: left;
   }
 
   .platform-row,

@@ -28,6 +28,11 @@ for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'ap
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
+const home = readFileSync(join(root, 'index.html'), 'utf8');
+for (const positioning of ['任何设备，<br>一个控制台。', 'Any + Deck', 'Android、iOS 与 HarmonyOS', 'The universal desktop control deck for any mobile OS.']) {
+  if (!home.includes(positioning)) failures.push(`index.html: 缺少品牌定位 ${positioning}`);
+}
+
 const baseStyles = readFileSync(join(root, 'assets/css/base.css'), 'utf8');
 const secondaryButtonStyles = baseStyles.match(/\.button\.secondary\s*\{([^}]*)\}/)?.[1] ?? '';
 if (!secondaryButtonStyles.includes('color: var(--ink)')) {
