@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、USB 与无线连接、投屏控制、应用文件管理、Logcat、Terminal 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、USB 与无线连接、手机视频投屏、设备控制、应用文件管理、Logcat、Terminal 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -25,12 +25,13 @@
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">投屏控制</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
             </div>
 
@@ -59,6 +60,13 @@
               <h3>打开投屏并控制设备</h3>
               <p>从设备行或工作区顶部打开 Mirror window。投屏窗口支持鼠标触控、键盘输入、Back、Home、Power、音量、旋转、截图与独立窗口缩放。</p>
               <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android Back。</li><li>鼠标中键默认映射为 Android Home。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+            </article>
+
+            <article class="article" id="video-cast" data-search-item>
+              <h3>将手机视频投到电脑播放</h3>
+              <p>Android 与 HarmonyOS 手机可通过 DLNA，将抖音、哔哩哔哩、小红书、爱奇艺等 App 中支持投屏的视频发送到 AnyDeck 播放窗口。</p>
+              <ol><li>让手机与电脑连接同一个可互访的局域网。</li><li>在 AnyDeck 中开启 DLNA 视频接收，并确认电脑端显示接收名称。</li><li>在手机视频 App 的播放页点击“投屏”或 TV 图标。</li><li>在设备列表选择 AnyDeck，电脑端会自动打开或复用播放窗口。</li></ol>
+              <p><strong>兼容性说明：</strong>投屏能力取决于 App 版本、账号、地区、片源协议与 DRM 限制。部分内容可能不提供投屏入口；App 内弹幕不会随视频传输。</p>
             </article>
 
             <article class="article" id="app-files" data-search-item>

@@ -1,0 +1,141 @@
+.media-cast {
+  color: #effaf6;
+  background: linear-gradient(140deg, #0f241c 0%, #163b2e 58%, #0b6d4d 100%);
+}
+
+.media-cast-grid {
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  align-items: center;
+  gap: 76px;
+}
+
+.media-cast .eyebrow {
+  color: #6ee7b7;
+}
+
+.media-cast .lede {
+  color: #c3d9d0;
+}
+
+.app-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 28px 0 18px;
+}
+
+.app-pills span {
+  padding: 7px 12px;
+  border: 1px solid rgba(167, 243, 208, 0.24);
+  border-radius: 999px;
+  color: #d8faec;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.compatibility-note {
+  margin-bottom: 24px;
+  color: #93afa4;
+  font-size: 12px;
+}
+
+.cast-visual {
+  display: grid;
+  grid-template-columns: 0.7fr auto 1.3fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.cast-phone,
+.cast-desktop {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.cast-phone {
+  padding: 16px;
+  border-radius: 24px;
+}
+
+.cast-phone strong,
+.cast-phone small {
+  display: block;
+}
+
+.cast-phone small,
+.cast-device-label {
+  color: #9ec0b2;
+  font-size: 10px;
+}
+
+.phone-video {
+  display: grid;
+  aspect-ratio: 0.74;
+  margin: 14px 0;
+  place-items: center;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(160deg, #8247f5, #f0548f 48%, #ffbb55);
+  font-size: 28px;
+}
+
+.cast-signal {
+  display: flex;
+  color: #6ee7b7;
+  font-size: 28px;
+  letter-spacing: -6px;
+}
+
+.cast-desktop {
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.desktop-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 13px;
+  color: #b8d1c7;
+  font-size: 10px;
+}
+
+.desktop-bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6a8479;
+}
+
+.desktop-bar span {
+  margin-left: 5px;
+}
+
+.desktop-video {
+  display: grid;
+  aspect-ratio: 16 / 10;
+  place-items: center;
+  color: #effaf6;
+  background: radial-gradient(circle at 68% 24%, #4384a2, transparent 28%), linear-gradient(145deg, #1d504b, #172836 72%);
+}
+
+.desktop-video span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 50%;
+  color: #10241d;
+  background: #6ee7b7;
+}
+
+.desktop-video strong {
+  margin-top: -36px;
+  color: #bcd6cc;
+  font-size: 12px;
+}
+

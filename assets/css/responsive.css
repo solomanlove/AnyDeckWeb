@@ -2,7 +2,8 @@
   .hero-grid,
   .gallery,
   .help-layout,
-  .brand-story-grid {
+  .brand-story-grid,
+  .media-cast-grid {
     grid-template-columns: 1fr;
   }
 
@@ -109,6 +110,15 @@
 
   .formula-result strong {
     text-align: left;
+  }
+
+  .cast-visual {
+    grid-template-columns: 0.72fr auto 1.28fr;
+    gap: 10px;
+  }
+
+  .cast-signal {
+    font-size: 20px;
   }
 
   .platform-row,

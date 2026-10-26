@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，统一设备连接、控制、诊断与 AI 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、手机视频投屏、诊断与 AI 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -99,6 +99,34 @@
             <article class="feature-card"><div class="icon-box">⌘</div><h3>Logcat 与 Terminal</h3><p>过滤实时日志，并在多标签 ADB Shell 中复用命令历史与常用诊断命令。</p></article>
             <article class="feature-card"><div class="icon-box">⌗</div><h3>布局与截图</h3><p>将当前截图与 XML 节点树放在同一画布，辅助定位元素与分析界面层级。</p></article>
             <article class="feature-card"><div class="icon-box">◌</div><h3>性能与进程</h3><p>查看关键资源状态、进程与前台窗口，让现场问题保留更完整的上下文。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section media-cast" id="video-cast">
+        <div class="media-cast-grid container">
+          <div class="media-cast-copy">
+            <p class="eyebrow">Video casting</p>
+            <h2>手机里的视频，<br>直接投到电脑。</h2>
+            <p class="lede">支持 Android 与 HarmonyOS 手机通过 DLNA，将抖音、哔哩哔哩、小红书、爱奇艺等 App 中的视频投到电脑播放。</p>
+            <div class="app-pills" aria-label="典型视频应用">
+              <span>抖音</span><span>哔哩哔哩</span><span>小红书</span><span>爱奇艺</span><span>更多 DLNA App</span>
+            </div>
+            <p class="compatibility-note">手机与电脑需处于同一局域网。实际可投内容取决于 App 版本、片源协议与 DRM 限制；弹幕不会随视频传输。</p>
+            <a class="button secondary" href="help.html#video-cast">查看视频投屏指南 →</a>
+          </div>
+          <div class="cast-visual" aria-label="手机视频投到电脑示意图">
+            <div class="cast-phone">
+              <span class="cast-device-label">Android / HarmonyOS</span>
+              <div class="phone-video"><span>▶</span></div>
+              <strong>选择投屏设备</strong>
+              <small>AnyDeck · 在线</small>
+            </div>
+            <div class="cast-signal" aria-hidden="true"><span>›</span><span>›</span><span>›</span></div>
+            <div class="cast-desktop">
+              <div class="desktop-bar"><i></i><i></i><i></i><span>AnyDeck Player</span></div>
+              <div class="desktop-video"><span>▶</span><strong>正在播放</strong></div>
+            </div>
           </div>
         </div>
       </section>
