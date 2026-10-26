@@ -118,11 +118,14 @@
 
 .search-wrap::after {
   position: absolute;
-  top: 16px;
-  right: 20px;
-  content: "⌕";
-  color: var(--brand-dark);
-  font-size: 24px;
+  top: 50%;
+  right: 17px;
+  width: 26px;
+  height: 26px;
+  background: center / 24px 24px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23067a55' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+  content: "";
+  pointer-events: none;
+  transform: translateY(-50%);
 }
 
 .help-layout {

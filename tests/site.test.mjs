@@ -43,6 +43,12 @@ if (!secondaryButtonStyles.includes('color: var(--ink)')) {
   failures.push('base.css: secondary 按钮必须显式设置深色文字，避免在深色容器中继承白色');
 }
 
+const pageStyles = readFileSync(join(root, 'assets/css/pages.css'), 'utf8');
+const searchIconStyles = pageStyles.match(/\.search-wrap::after\s*\{([^}]*)\}/)?.[1] ?? '';
+if (!searchIconStyles.includes('width: 26px') || !searchIconStyles.includes('svg+xml')) {
+  failures.push('pages.css: 帮助搜索框必须使用固定尺寸 SVG 搜索图标');
+}
+
 if (failures.length > 0) {
   console.error(failures.join('\n'));
   process.exit(1);
