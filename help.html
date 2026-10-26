@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、模拟器管理、应用分析、AI MCP、手机视频投屏、Logcat、Terminal 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP、手机视频投屏、Logcat、Terminal 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,17 +20,18 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB、模拟器、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、应用管理、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：AirPlay、模拟器、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
@@ -63,6 +64,13 @@
               <h3>打开投屏并控制设备</h3>
               <p>从设备行或工作区顶部打开 Mirror window。投屏窗口支持鼠标触控、键盘输入、Back、Home、Power、音量、旋转、截图与独立窗口缩放。</p>
               <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android Back。</li><li>鼠标中键默认映射为 Android Home。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+            </article>
+
+            <article class="article" id="airplay" data-search-item>
+              <h3>使用 iOS AirPlay 无线投屏</h3>
+              <p>macOS 版 AnyDeck 可作为 AirPlay Receiver，接收 iPhone 或 iPad 的无线屏幕镜像，并在独立窗口播放画面与设备音频。</p>
+              <ol><li>让 iPhone / iPad 与 Mac 连接同一个可互访的 Wi‑Fi；关闭可能阻断局域网发现的 VPN 或 AP isolation。</li><li>在 AnyDeck 中启动 AirPlay Receiver，并确认页面显示接收名称 <code>AnyDeck-AirPlay</code>。</li><li>在 iPhone / iPad 打开“控制中心”，点击“屏幕镜像”，选择 <code>AnyDeck-AirPlay</code>。</li><li>等待 AnyDeck 打开投屏窗口。结束时回到“屏幕镜像”，点击“停止镜像”。</li></ol>
+              <p><strong>能力边界：</strong>当前 AirPlay Receiver 是仅支持 macOS 的实验性能力，不提供从 Mac 反向控制 iPhone / iPad。HLS、HEVC 与 DRM 保护内容不属于当前兼容范围；连接质量还会受到 Wi‑Fi、路由器隔离和系统版本影响。</p>
             </article>
 
             <article class="article" id="video-cast" data-search-item>

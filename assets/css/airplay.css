@@ -1,0 +1,268 @@
+.airplay {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(53, 115, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 86% 74%, rgba(16, 185, 129, 0.12), transparent 30%),
+    #f4f8ff;
+}
+
+.airplay-grid {
+  display: grid;
+  grid-template-columns: 0.84fr 1.16fr;
+  align-items: center;
+  gap: 76px;
+}
+
+.airplay .eyebrow {
+  color: #2563eb;
+}
+
+.airplay-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 28px 0 18px;
+}
+
+.airplay-pills span {
+  padding: 7px 12px;
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 999px;
+  color: #23447f;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+}
+
+.airplay-note {
+  margin-bottom: 24px;
+  color: #66778f;
+  font-size: 12px;
+}
+
+.airplay-visual {
+  display: grid;
+  grid-template-columns: 0.72fr auto 1.28fr;
+  align-items: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.airplay-phone {
+  padding: 10px 10px 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 28px;
+  color: #16243d;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 70px rgba(37, 99, 235, 0.15);
+  backdrop-filter: blur(18px);
+  text-align: center;
+}
+
+.airplay-phone-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 10px 9px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.airplay-phone-head i {
+  width: 28px;
+  height: 8px;
+  border-radius: 999px;
+  background: #111827;
+}
+
+.airplay-control-center {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  min-height: 220px;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #c7d8f9, #9bb3db 55%, #637ca6);
+}
+
+.control-tile {
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.control-tile.active {
+  background: linear-gradient(145deg, #60a5fa, #2563eb);
+}
+
+.mirror-picker {
+  grid-column: 1 / -1;
+  align-self: end;
+  padding: 13px;
+  border-radius: 15px;
+  color: #eaf2ff;
+  background: rgba(15, 28, 52, 0.84);
+  text-align: left;
+}
+
+.mirror-picker small,
+.mirror-picker strong,
+.mirror-picker span {
+  display: block;
+}
+
+.mirror-picker small {
+  margin-bottom: 6px;
+  color: #b9c9e4;
+  font-size: 9px;
+}
+
+.mirror-picker strong {
+  font-size: 11px;
+}
+
+.mirror-picker span {
+  margin-top: 4px;
+  color: #86efac;
+  font-size: 9px;
+}
+
+.mirror-picker i,
+.airplay-live i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.airplay-phone > strong,
+.airplay-mac > strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.airplay-wave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.airplay-wave i {
+  display: block;
+  width: 5px;
+  border-radius: 999px;
+  background: linear-gradient(#2563eb, #10b981);
+}
+
+.airplay-wave i:nth-child(1) { height: 18px; }
+.airplay-wave i:nth-child(2) { height: 32px; }
+.airplay-wave i:nth-child(3) { height: 46px; }
+
+.airplay-mac {
+  text-align: center;
+}
+
+.airplay-screen {
+  position: relative;
+  display: grid;
+  min-height: 285px;
+  padding: 22px;
+  place-items: center;
+  border: 8px solid #1c2535;
+  border-radius: 20px;
+  color: #f8fbff;
+  background:
+    radial-gradient(circle at 72% 18%, rgba(96, 165, 250, 0.7), transparent 28%),
+    linear-gradient(145deg, #17223b, #193d55 55%, #08735c);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.22);
+}
+
+.airplay-live {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.48);
+  font-size: 9px;
+}
+
+.mirrored-phone {
+  display: flex;
+  width: 108px;
+  aspect-ratio: 0.53;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.72);
+  border-radius: 18px;
+  background: linear-gradient(165deg, #4f7fd7, #17223b 48%, #0b8f6a);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.mirrored-phone span,
+.mirrored-phone small {
+  color: #c9daf4;
+  font-size: 9px;
+}
+
+.mirrored-phone strong {
+  font-size: 12px;
+}
+
+.airplay-mac-camera {
+  position: relative;
+  z-index: 1;
+  width: 42px;
+  height: 12px;
+  margin: 0 auto -12px;
+  border-radius: 0 0 8px 8px;
+  background: #1c2535;
+}
+
+.airplay-mac-base {
+  width: 42%;
+  height: 12px;
+  margin: 0 auto;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(#b8c4d3, #75859a);
+}
+
+@media (max-width: 900px) {
+  .airplay-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .airplay-visual {
+    grid-template-columns: 0.76fr auto 1.24fr;
+    gap: 8px;
+  }
+
+  .airplay-control-center {
+    min-height: 165px;
+    padding: 7px;
+  }
+
+  .control-tile {
+    height: 38px;
+  }
+
+  .mirror-picker {
+    padding: 9px;
+  }
+
+  .airplay-screen {
+    min-height: 210px;
+    padding: 12px;
+  }
+
+  .mirrored-phone {
+    width: 78px;
+  }
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、手机视频投屏与 AI MCP 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、iOS AirPlay 无线投屏、手机视频投屏与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -168,6 +168,41 @@
               <div><span>Controlled Shell</span><strong>execute_shell</strong><small>安全规则与审计保护</small></div>
             </div>
             <div class="mcp-call"><span>tools/call</span><code>take_screenshot · device_01</code><b>200 · 284ms</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section airplay" id="airplay">
+        <div class="airplay-grid container">
+          <div class="airplay-copy">
+            <p class="eyebrow">iOS wireless mirroring</p>
+            <h2>iPhone / iPad，<br>无线投到 Mac。</h2>
+            <p class="lede">在 macOS 版 AnyDeck 中启动 AirPlay Receiver，即可从 iPhone 或 iPad 的「屏幕镜像」发送画面与设备音频，无需连接数据线。</p>
+            <div class="airplay-pills" aria-label="AirPlay 无线投屏能力">
+              <span>iPhone</span><span>iPad</span><span>AirPlay Beta</span><span>Wi‑Fi</span><span>画面 + 音频</span>
+            </div>
+            <p class="airplay-note">手机与 Mac 需处于同一可互访局域网。当前 AirPlay Receiver 是仅支持 macOS 的实验性能力；受 DRM 保护的内容不在屏幕镜像兼容范围内。</p>
+            <a class="button secondary" href="help.html#airplay">查看 AirPlay 投屏指南 →</a>
+          </div>
+          <div class="airplay-visual" aria-label="iPhone 通过 AirPlay 无线投屏到 Mac 示意图">
+            <div class="airplay-phone">
+              <div class="airplay-phone-head"><span>9:41</span><i></i></div>
+              <div class="airplay-control-center">
+                <span class="control-tile"></span><span class="control-tile active"></span>
+                <div class="mirror-picker"><small>屏幕镜像</small><strong>AnyDeck-AirPlay</strong><span><i></i> 已连接</span></div>
+              </div>
+              <strong>iPhone / iPad</strong>
+            </div>
+            <div class="airplay-wave" aria-hidden="true"><i></i><i></i><i></i></div>
+            <div class="airplay-mac">
+              <div class="airplay-mac-camera"></div>
+              <div class="airplay-screen">
+                <span class="airplay-live"><i></i> AirPlay</span>
+                <div class="mirrored-phone"><span>AnyDeck</span><strong>无线镜像中</strong><small>画面与音频</small></div>
+              </div>
+              <div class="airplay-mac-base"></div>
+              <strong>AnyDeck for macOS</strong>
+            </div>
           </div>
         </div>
       </section>

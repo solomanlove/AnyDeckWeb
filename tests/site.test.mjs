@@ -24,7 +24,7 @@ for (const page of pages) {
 }
 
 const help = readFileSync(join(root, 'help.html'), 'utf8');
-for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'video-cast', 'emulator-management', 'app-analysis', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
+for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
@@ -35,6 +35,14 @@ for (const positioning of ['任何设备，<br>一个控制台。', 'Any + Deck'
 
 for (const videoCastCopy of ['Android 与 HarmonyOS', '抖音', '哔哩哔哩', '小红书', '爱奇艺', 'help.html#video-cast']) {
   if (!home.includes(videoCastCopy)) failures.push(`index.html: 缺少视频投屏信息 ${videoCastCopy}`);
+}
+
+for (const airplayCopy of ['iOS wireless mirroring', 'iPhone / iPad', 'AnyDeck-AirPlay', 'AirPlay Receiver', '仅支持 macOS', '实验性能力', 'help.html#airplay']) {
+  if (!home.includes(airplayCopy)) failures.push(`index.html: 缺少 AirPlay 投屏信息 ${airplayCopy}`);
+}
+
+for (const airplayHelpCopy of ['控制中心', '屏幕镜像', '停止镜像', '不提供从 Mac 反向控制']) {
+  if (!help.includes(airplayHelpCopy)) failures.push(`help.html: 缺少 AirPlay 帮助信息 ${airplayHelpCopy}`);
 }
 
 for (const developerToolCopy of ['模拟器管理', 'Android AVD', 'DevEco Emulator', 'Xcode Simulator', '应用分析', 'Target SDK', '原生库', 'help.html#emulator-management', 'help.html#app-analysis']) {
