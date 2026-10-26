@@ -3,7 +3,8 @@
   .gallery,
   .help-layout,
   .brand-story-grid,
-  .media-cast-grid {
+  .media-cast-grid,
+  .developer-tool-grid {
     grid-template-columns: 1fr;
   }
 
@@ -119,6 +120,31 @@
 
   .cast-signal {
     font-size: 20px;
+  }
+
+  .tool-card-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analysis-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analysis-summary div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .analysis-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analysis-tabs span:nth-child(2) {
+    border-right: 0;
+  }
+
+  .analysis-tabs span:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
   }
 
   .platform-row,

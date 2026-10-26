@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、USB 与无线连接、手机视频投屏、设备控制、应用文件管理、Logcat、Terminal 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、模拟器管理、应用分析、手机视频投屏、Logcat、Terminal 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -25,13 +25,15 @@
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#mirroring">设备投屏控制</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
             </div>
 
@@ -67,6 +69,20 @@
               <p>Android 与 HarmonyOS 手机可通过 DLNA，将抖音、哔哩哔哩、小红书、爱奇艺等 App 中支持投屏的视频发送到 AnyDeck 播放窗口。</p>
               <ol><li>让手机与电脑连接同一个可互访的局域网。</li><li>在 AnyDeck 中开启 DLNA 视频接收，并确认电脑端显示接收名称。</li><li>在手机视频 App 的播放页点击“投屏”或 TV 图标。</li><li>在设备列表选择 AnyDeck，电脑端会自动打开或复用播放窗口。</li></ol>
               <p><strong>兼容性说明：</strong>投屏能力取决于 App 版本、账号、地区、片源协议与 DRM 限制。部分内容可能不提供投屏入口；App 内弹幕不会随视频传输。</p>
+            </article>
+
+            <article class="article" id="emulator-management" data-search-item>
+              <h3>统一管理本地模拟器</h3>
+              <p>AnyDeck 会扫描本机已有的 Android AVD、DevEco Emulator 与 Xcode Simulator，在同一个列表中展示平台、系统版本、分辨率、SDK、ABI、内存、存储与运行状态。</p>
+              <ol><li>从左侧导航进入“模拟器管理”，选择 Android、HarmonyOS 或 iOS 平台。</li><li>使用名称或规格搜索目标模拟器，并查看配置详情。</li><li>选择模拟器后执行启动、停止、冷启动、刷新或打开配置目录。</li><li>启动失败时点击错误状态，查看并复制有界诊断日志。</li></ol>
+              <p><strong>边界说明：</strong>AnyDeck 管理已由 Android Studio、DevEco Studio 或 Xcode 创建的模拟器，不自动下载 System Image，也不代替对应 IDE 创建新设备。</p>
+            </article>
+
+            <article class="article" id="app-analysis" data-search-item>
+              <h3>分析 APK 与已安装应用</h3>
+              <p>应用分析统一展示名称、包名或 Bundle、版本、SDK、ABI、DEBUG 状态与文件信息，并按 Tab 查看组件、权限、Metadata、DEX、签名证书和原生库。</p>
+              <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过 Finder 使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、Minimum SDK、Target SDK 与 ABI。</li><li>切换组件、权限、签名和原生库 Tab，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
+              <p><strong>边界说明：</strong>本地 APK 的权限表示 Manifest 声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
             </article>
 
             <article class="article" id="app-files" data-search-item>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、手机视频投屏、诊断与 AI 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、模拟器管理、应用分析、手机视频投屏与 AI 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -99,6 +99,47 @@
             <article class="feature-card"><div class="icon-box">⌘</div><h3>Logcat 与 Terminal</h3><p>过滤实时日志，并在多标签 ADB Shell 中复用命令历史与常用诊断命令。</p></article>
             <article class="feature-card"><div class="icon-box">⌗</div><h3>布局与截图</h3><p>将当前截图与 XML 节点树放在同一画布，辅助定位元素与分析界面层级。</p></article>
             <article class="feature-card"><div class="icon-box">◌</div><h3>性能与进程</h3><p>查看关键资源状态、进程与前台窗口，让现场问题保留更完整的上下文。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section developer-tools" id="developer-tools">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Developer workspace</p>
+            <h2>从虚拟设备到应用内部，<br>一处看清。</h2>
+            <p class="lede">统一管理三大平台模拟器，并深入查看 APK 与已安装应用的关键结构信息。</p>
+          </div>
+          <div class="developer-tool-grid">
+            <article class="developer-tool-card emulator-card">
+              <div class="tool-card-head">
+                <div><span class="tool-kicker">Emulator management</span><h3>模拟器管理</h3></div>
+                <a href="help.html#emulator-management">使用指南 →</a>
+              </div>
+              <p>自动扫描 Android AVD、DevEco Emulator 与 Xcode Simulator，集中查看状态、规格并执行启动、停止、冷启动和刷新。</p>
+              <div class="platform-tags"><span>Android AVD</span><span>DevEco</span><span>Xcode</span></div>
+              <div class="emulator-list" aria-label="模拟器管理示意">
+                <div class="emulator-row"><i class="platform-mark android">A</i><span><strong>Pixel 9 Pro</strong><small>Android 16 · arm64</small></span><b class="status running">运行中</b></div>
+                <div class="emulator-row"><i class="platform-mark harmony">H</i><span><strong>Mate Simulator</strong><small>HarmonyOS · 1080 × 2340</small></span><b class="status">已关闭</b></div>
+                <div class="emulator-row"><i class="platform-mark ios">i</i><span><strong>iPhone Simulator</strong><small>iOS · Apple Silicon</small></span><b class="status">已关闭</b></div>
+              </div>
+            </article>
+
+            <article class="developer-tool-card analysis-card">
+              <div class="tool-card-head">
+                <div><span class="tool-kicker">Application insight</span><h3>应用分析</h3></div>
+                <a href="help.html#app-analysis">使用指南 →</a>
+              </div>
+              <p>分析本地 APK 与设备中的已安装应用，集中查看版本、SDK、ABI、组件、权限、签名证书和原生库。</p>
+              <div class="analysis-summary">
+                <div><small>Package</small><strong>com.example.app</strong></div>
+                <div><small>Target SDK</small><strong>36</strong></div>
+                <div><small>ABI</small><strong>arm64-v8a</strong></div>
+              </div>
+              <div class="analysis-tabs" aria-label="应用分析内容">
+                <span>组件 <b>42</b></span><span>权限 <b>18</b></span><span>签名 <b>2</b></span><span>原生库 <b>12</b></span>
+              </div>
+            </article>
           </div>
         </div>
       </section>
