@@ -1,4 +1,4 @@
-@import url("base.css");
+@import url("base.css?v=20261028b");
 @import url("components.css");
 @import url("airplay.css");
 @import url("media-cast.css");
@@ -8,4 +8,4 @@
 @import url("console.css");
 @import url("ai-mcp.css");
 @import url("pages.css");
-@import url("responsive.css");
+@import url("responsive.css?v=20261028b");

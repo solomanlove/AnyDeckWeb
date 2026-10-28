@@ -12,6 +12,12 @@ for (const page of pages) {
   if (!html.includes('<html lang="zh-CN">')) failures.push(`${page}: 缺少中文语言声明`);
   if (!html.includes('name="viewport"')) failures.push(`${page}: 缺少移动端 viewport`);
   if (!html.includes('<title>')) failures.push(`${page}: 缺少 title`);
+  if (!html.includes('class="nav-dropdown"') || !html.includes('aria-label="功能菜单"')) {
+    failures.push(`${page}: 版本参考必须收进功能菜单`);
+  }
+  if (html.includes('<a href="index.html#features">功能</a><a href="versions.html"')) {
+    failures.push(`${page}: 版本参考不能保留为一级导航`);
+  }
 
   for (const match of html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)) {
     const target = match[1];
