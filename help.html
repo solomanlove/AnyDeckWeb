@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：快速开始、设备连接、设备 HTTP 正向代理、端口转发、运行控制台、iOS AirPlay 无线投屏、模拟器管理、应用分析、AI MCP 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏、代理、端口转发、运行控制台、AI MCP 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,16 +20,17 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：端口转发、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="usb-debugging.html">USB 调试指南</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">API</div><h3>系统版本参考</h3><p>对照 Android、HarmonyOS 与 iOS 的版本和开发工具链。</p><a href="versions.html">查看对照表 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">USB</div><h3>USB 调试与设备信任</h3><p>按厂商查找 Android、HarmonyOS 与 iOS 的连接设置。</p><a href="usb-debugging.html">查看厂商指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP Proxy，并管理 Forward / Reverse 端口映射。</p><a href="#network-tools">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
@@ -51,9 +52,9 @@
             </article>
 
             <article class="article" id="connect-usb" data-search-item>
-              <h3>通过 USB 连接 Android 设备</h3>
-              <ol><li>进入手机“关于手机”，连续点击版本号开启 Developer options。</li><li>在 Developer options 中开启 USB debugging。</li><li>连接数据线并将 USB 用途切换为文件传输或保持默认调试模式。</li><li>接受 RSA debugging authorization；如为个人电脑，可勾选始终允许。</li></ol>
-              <p>若设备显示 <code>unauthorized</code>，请解锁手机并重新确认授权；显示 <code>offline</code> 时可重新插拔 USB 后刷新。</p>
+              <h3>通过 USB 连接设备</h3>
+              <ol><li>Android 开启 Developer options 与 USB debugging；HarmonyOS 按系统版本开启 ADB 或 HDC 调试。</li><li>iPhone / iPad 解锁后确认“信任此电脑”；需要安装开发包或自动化控制时再开启 Developer Mode。</li><li>使用支持数据传输的线缆连接电脑，并在手机上确认调试或配对授权。</li><li>返回 AnyDeck 刷新设备列表，确认状态为已连接。</li></ol>
+              <p>不同厂商的菜单位置与额外开关请查看 <a href="usb-debugging.html"><strong>USB 调试与设备信任完整指南 →</strong></a>。Android 显示 <code>unauthorized</code> 时请解锁手机并重新确认 RSA 授权；显示 <code>offline</code> 时可重新插拔 USB 后刷新。</p>
             </article>
 
             <article class="article" id="connect-wifi" data-search-item>
@@ -150,7 +151,7 @@ adb reverse tcp:8081 tcp:8081</code></pre>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="#connect-wifi">无线连接</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>最后更新：2026-10-26</span></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="usb-debugging.html">USB 调试指南</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>最后更新：2026-10-29</span></div></div></footer>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>

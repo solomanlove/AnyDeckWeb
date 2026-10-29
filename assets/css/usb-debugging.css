@@ -1,0 +1,158 @@
+.usb-hero { padding-bottom: 64px; }
+.usb-hero .hero-actions { margin-top: 28px; }
+
+.usb-jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.usb-jump-links a {
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--brand-dark);
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.usb-jump-links a:hover { border-color: rgba(16, 185, 129, 0.42); background: var(--brand-pale); }
+
+.usb-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.usb-overview-card,
+.vendor-card,
+.usb-note,
+.usb-check-card {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.usb-overview-card { padding: 24px; }
+
+.usb-overview-card .platform-mark {
+  display: inline-grid;
+  min-width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  padding: 0 10px;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--brand-dark);
+  background: var(--brand-pale);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.usb-overview-card h2,
+.vendor-card h3,
+.usb-check-card h3 { margin-bottom: 8px; }
+
+.usb-overview-card p,
+.vendor-card p,
+.usb-note p,
+.usb-check-card p { margin: 0; color: var(--muted); }
+
+.usb-section { scroll-margin-top: 86px; }
+
+.usb-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 28px;
+}
+
+.usb-section-head .lede { margin: 0; }
+
+.vendor-grid,
+.usb-check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.vendor-card,
+.usb-check-card { padding: 26px; }
+
+.vendor-card .vendor-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--brand-dark);
+  background: var(--brand-pale);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vendor-card ol,
+.vendor-card ul,
+.usb-check-card ol,
+.usb-check-card ul { margin: 16px 0 0; padding-left: 21px; }
+
+.vendor-card li,
+.usb-check-card li { margin: 8px 0; color: var(--muted); }
+
+.settings-path {
+  display: block;
+  margin-top: 14px;
+  padding: 13px 15px;
+  border-radius: 12px;
+  color: #d8f9ec;
+  background: #10241d;
+  font: 13px/1.65 "SFMono-Regular", Consolas, monospace;
+}
+
+.usb-note {
+  margin-top: 18px;
+  padding: 20px 22px;
+  border-color: #c9e8da;
+  background: #f4fbf8;
+}
+
+.usb-note strong { color: var(--brand-dark); }
+.usb-check-card .code-panel { margin-top: 18px; }
+
+.source-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+  padding: 0;
+  list-style: none;
+}
+
+.source-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 17px;
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  color: var(--ink);
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.source-list a span { color: var(--brand-dark); }
+
+@media (max-width: 900px) {
+  .usb-section-head { grid-template-columns: 1fr; gap: 14px; }
+}
+
+@media (max-width: 720px) {
+  .usb-overview,
+  .vendor-grid,
+  .usb-check-grid { grid-template-columns: 1fr; }
+  .usb-jump-links { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 5px; }
+  .usb-jump-links a { white-space: nowrap; }
+  .source-list a { align-items: flex-start; flex-direction: column; }
+}

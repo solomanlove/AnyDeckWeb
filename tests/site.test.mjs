@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const pages = ['index.html', 'download.html', 'help.html', 'versions.html'];
+const pages = ['index.html', 'download.html', 'help.html', 'versions.html', 'usb-debugging.html'];
 const failures = [];
 
 for (const page of pages) {
@@ -32,6 +32,20 @@ for (const page of pages) {
 const help = readFileSync(join(root, 'help.html'), 'utf8');
 for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
+}
+
+for (const usbEntry of ['usb-debugging.html', 'USB 调试与设备信任', 'Android、HarmonyOS 与 iOS']) {
+  if (!help.includes(usbEntry)) failures.push(`help.html: 缺少 USB 调试指南入口 ${usbEntry}`);
+}
+
+const usbDebugging = readFileSync(join(root, 'usb-debugging.html'), 'utf8');
+for (const usbCopy of ['id="android"', '小米 / Redmi', 'OPPO / OnePlus / realme', 'vivo / iQOO', 'Samsung Galaxy', '荣耀 MagicOS', '华为 EMUI', 'id="harmonyos"', 'HarmonyOS 5', 'HDC', 'id="ios"', '信任此电脑', 'Developer Mode', 'adb devices', 'hdc list targets', 'xcrun devicectl list devices']) {
+  if (!usbDebugging.includes(usbCopy)) failures.push(`usb-debugging.html: 缺少 USB 调试信息 ${usbCopy}`);
+}
+
+const styleImports = readFileSync(join(root, 'assets/css/styles.css'), 'utf8');
+if (!styleImports.includes('@import url("usb-debugging.css")')) {
+  failures.push('styles.css: 缺少 USB 调试页面样式入口');
 }
 
 const home = readFileSync(join(root, 'index.html'), 'utf8');

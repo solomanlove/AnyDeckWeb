@@ -2,6 +2,14 @@
 
 AnyDeck 的产品官网、软件下载页与帮助中心。项目使用原生 HTML、CSS 与 JavaScript，无构建依赖，可直接部署到 GitHub Pages。
 
+## 页面
+
+- `index.html`：产品与功能介绍
+- `download.html`：软件下载与环境要求
+- `help.html`：帮助中心入口与功能指南
+- `usb-debugging.html`：Android 厂商、HarmonyOS 与 iOS USB 连接指南
+- `versions.html`：平台版本与 API 对照
+
 ## 本地预览
 
 ```bash
