@@ -20,23 +20,23 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Download</p><h1>选择适合你的 AnyDeck。</h1><p class="lede">AnyDeck 面向 macOS、Windows 与 Linux。当前公开仓库尚未发布二进制 Release，可先下载源码自行构建。</p></div>
+        <div class="container"><p class="eyebrow">软件下载</p><h1>选择适合你的 AnyDeck。</h1><p class="lede">AnyDeck 面向 macOS、Windows 与 Linux。当前公开仓库尚未发布二进制安装包，可先下载源码自行构建。</p></div>
       </section>
 
       <section class="section">
         <div class="container">
-          <div class="release-notice" role="status"><span>⚠</span><div><strong>公开安装包尚未发布</strong><span>截至 2026-10-26，官方 GitHub Releases 页面暂无可下载版本。下面的系统按钮会保持禁用，避免提供无效链接。</span></div></div>
+          <div class="release-notice" role="status"><span>⚠</span><div><strong>公开安装包尚未发布</strong><span>截至 2026-10-26，官方 GitHub 发布页暂无可下载版本。下面的系统按钮会保持禁用，避免提供无效链接。</span></div></div>
           <div class="download-grid">
-            <article class="download-card"><div class="os"><span>●</span> macOS</div><p>适用于 Apple Silicon 与 Intel Mac。原生投屏链路使用 VideoToolbox、AudioQueue 与 Metal。</p><div class="meta">安装包：等待首个 GitHub Release</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
-            <article class="download-card"><div class="os"><span>⊞</span> Windows</div><p>适用于 Windows 桌面环境，覆盖 ADB 设备连接、应用、文件、日志与 Terminal 等工作流。</p><div class="meta">安装包：等待首个 GitHub Release</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
-            <article class="download-card"><div class="os"><span>◇</span> Linux</div><p>提供 Linux 桌面目标，可从源码构建并接入本机 Android platform-tools。</p><div class="meta">安装包：等待首个 GitHub Release</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
+            <article class="download-card"><div class="os"><span>●</span> macOS</div><p>适用于 Apple 芯片与 Intel 芯片 Mac。原生投屏链路使用 VideoToolbox、AudioQueue 与 Metal。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
+            <article class="download-card"><div class="os"><span>⊞</span> Windows</div><p>适用于 Windows 桌面环境，覆盖 ADB 设备连接、应用、文件、日志与终端等工作流。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
+            <article class="download-card"><div class="os"><span>◇</span> Linux</div><p>提供 Linux 桌面目标，可从源码构建并接入本机 Android 平台工具。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
           </div>
         </div>
       </section>
 
       <section class="section dark-section" id="source">
         <div class="container">
-          <div class="section-heading"><p class="eyebrow">Build from source</p><h2>从源码开始。</h2><p class="lede">需要 Flutter SDK 与目标平台桌面开发环境。下面命令会拉取主仓库并启动 macOS 开发版本。</p></div>
+          <div class="section-heading"><p class="eyebrow">从源码构建</p><h2>从源码开始。</h2><p class="lede">需要 Flutter SDK 与目标平台桌面开发环境。下面命令会拉取主仓库并启动 macOS 开发版本。</p></div>
           <pre class="code-panel"><code>git clone https://github.com/solomanlove/AnyDeck.git
 cd AnyDeck
 flutter pub get
@@ -47,10 +47,10 @@ flutter run -d macos</code></pre>
 
       <section class="section">
         <div class="container">
-          <div class="section-heading"><p class="eyebrow">Prerequisites</p><h2>运行前准备。</h2><p class="lede">基础 Android 调试依赖 ADB；其他平台或扩展能力按需准备对应工具链。</p></div>
+          <div class="section-heading"><p class="eyebrow">环境要求</p><h2>运行前准备。</h2><p class="lede">基础 Android 调试依赖 ADB；其他平台或扩展能力按需准备对应工具链。</p></div>
           <div class="requirements">
             <article class="requirement"><h3>Android / ADB</h3><p>安装 Android SDK platform-tools，并确保终端可执行 <code>adb devices</code>。</p></article>
-            <article class="requirement"><h3>Screen mirroring</h3><p>项目内包含投屏服务组件；本地构建时按仓库脚本准备 Rust 原生桥接。</p></article>
+            <article class="requirement"><h3>屏幕投射</h3><p>项目内包含投屏服务组件；本地构建时按仓库脚本准备 Rust 原生桥接。</p></article>
             <article class="requirement"><h3>HarmonyOS / HDC</h3><p>管理 HarmonyOS NEXT 设备时，需要 DevEco Studio 提供的 HDC 工具链。</p></article>
             <article class="requirement"><h3>iOS / go-ios</h3><p>iOS 连接与调试需要 go-ios；部分投屏与 Web Inspector 能力当前依赖 macOS。</p></article>
           </div>
@@ -60,7 +60,7 @@ flutter run -d macos</code></pre>
       <section class="section"><div class="container cta"><div><h2>第一次使用？</h2><p>从环境检查、USB 授权到无线连接，帮助中心给出完整路径。</p></div><a class="button primary" href="help.html#quick-start">阅读快速开始</a></div></section>
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>产品</h3><div class="footer-links"><a href="index.html#features">功能说明</a><a href="versions.html">版本参考</a><a href="download.html">软件下载</a><a href="help.html">帮助中心</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>Apache-2.0 licensed.</span></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>产品</h3><div class="footer-links"><a href="index.html#features">功能说明</a><a href="versions.html">版本参考</a><a href="download.html">软件下载</a><a href="help.html">帮助中心</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">问题反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck 贡献者。</span><span>基于 Apache-2.0 许可证发布。</span></div></div></footer>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>

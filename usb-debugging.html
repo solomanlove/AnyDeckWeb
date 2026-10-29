@@ -21,7 +21,7 @@
     <main>
       <section class="page-hero usb-hero">
         <div class="container">
-          <p class="eyebrow">USB connection guide</p>
+          <p class="eyebrow">USB 连接指南</p>
           <h1>让手机准备好，<br>再交给 AnyDeck。</h1>
           <p class="lede">不同品牌的入口名称不完全相同，但目标一致：允许电脑与设备建立可信的调试连接。按系统和厂商选择下面的路径。</p>
           <div class="hero-actions usb-jump-links" aria-label="跳转到平台指南"><a href="#android">Android 厂商</a><a href="#harmonyos">HarmonyOS</a><a href="#ios">iPhone / iPad</a><a href="#verify">验证连接</a><a href="#troubleshooting">连接故障</a></div>
@@ -30,31 +30,31 @@
 
       <section class="section">
         <div class="container usb-overview">
-          <article class="usb-overview-card"><span class="platform-mark">ADB</span><h2>Android</h2><p>开启 Developer options 和 USB debugging，再确认 RSA 调试授权。</p></article>
+          <article class="usb-overview-card"><span class="platform-mark">ADB</span><h2>Android</h2><p>开启“开发者选项”和“USB 调试”，再确认 RSA 调试授权。</p></article>
           <article class="usb-overview-card"><span class="platform-mark">HDC</span><h2>HarmonyOS</h2><p>HarmonyOS 5+ 使用 HDC；较早兼容版本也可能通过 ADB 连接。</p></article>
-          <article class="usb-overview-card"><span class="platform-mark">iOS</span><h2>iPhone / iPad</h2><p>iOS 没有“USB 调试”开关；先信任电脑，需要开发能力时再开启 Developer Mode。</p></article>
+          <article class="usb-overview-card"><span class="platform-mark">iOS</span><h2>iPhone / iPad</h2><p>iOS 没有“USB 调试”开关；先信任电脑，需要开发能力时再开启“开发者模式”。</p></article>
         </div>
       </section>
 
       <section class="section section-soft usb-section" id="android">
         <div class="container">
-          <div class="usb-section-head"><div><p class="eyebrow">Android / ADB</p><h2>按手机厂商开启 USB debugging</h2></div><p class="lede">菜单名称会随系统版本变化。找不到入口时，可在系统设置顶部搜索“版本号”“开发者选项”或“USB 调试”。</p></div>
+          <div class="usb-section-head"><div><p class="eyebrow">Android / ADB</p><h2>按手机厂商开启 USB 调试</h2></div><p class="lede">菜单名称会随系统版本变化。找不到入口时，可在系统设置顶部搜索“版本号”“开发者选项”或“USB 调试”。</p></div>
           <div class="vendor-grid">
-            <article class="vendor-card"><span class="vendor-label">Google / Motorola / Lenovo / ASUS / Nothing</span><h3>原生或接近原生 Android</h3><ol><li>进入“设置 → 关于手机”，连续点击“版本号 / Build number”7 次。</li><li>返回“设置 → 系统 → 开发者选项”。</li><li>打开“USB 调试”，连接电脑后允许 RSA 授权。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统 → 开发者选项 → USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">Google / 摩托罗拉 / 联想 / 华硕 / Nothing</span><h3>原生或接近原生 Android</h3><ol><li>进入“设置 → 关于手机”，连续点击“版本号”7 次。</li><li>返回“设置 → 系统 → 开发者选项”。</li><li>打开“USB 调试”，连接电脑后允许 RSA 授权。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统 → 开发者选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">Xiaomi / Redmi / POCO</span><h3>小米 / Redmi：MIUI 与 HyperOS</h3><ol><li>进入“设置 → 关于手机 / 我的设备 → 详细信息与规格 / 全部参数”。</li><li>连续点击“OS 版本 / HyperOS 版本 / MIUI 版本”7 次。</li><li>进入“更多设置 / 附加设置 → 开发者选项”，打开“USB 调试”。</li><li>手机已识别但无法控制时，再检查“USB 调试（安全设置）”；部分版本要求登录小米账号。</li></ol><code class="settings-path">关于手机 → OS / MIUI 版本 × 7<br>更多设置 → 开发者选项 → USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">小米 / Redmi / POCO</span><h3>小米 / Redmi：MIUI 与 HyperOS</h3><ol><li>进入“设置 → 关于手机 / 我的设备 → 详细信息与规格 / 全部参数”。</li><li>连续点击“系统版本 / HyperOS 版本 / MIUI 版本”7 次。</li><li>进入“更多设置 / 附加设置 → 开发者选项”，打开“USB 调试”。</li><li>手机已识别但无法控制时，再检查“USB 调试（安全设置）”；部分版本要求登录小米账号。</li></ol><code class="settings-path">关于手机 → 系统 / MIUI 版本 × 7<br>更多设置 → 开发者选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">OPPO / OnePlus / realme</span><h3>ColorOS / OxygenOS / realme UI</h3><ol><li>进入“设置 → 关于本机 / 关于设备 → 版本”。</li><li>连续点击“版本号 / Build number”7 次并验证锁屏密码。</li><li>ColorOS 14.1+ 通常进入“系统与更新 → 开发者选项”；较早版本位于“系统设置 / 其他设置”。</li><li>打开“USB 调试”并确认。</li></ol><code class="settings-path">关于设备 → 版本 → 版本号 × 7<br>系统与更新 / 系统设置 → 开发者选项</code></article>
+            <article class="vendor-card"><span class="vendor-label">OPPO / 一加 / realme</span><h3>ColorOS / OxygenOS / realme UI</h3><ol><li>进入“设置 → 关于本机 / 关于设备 → 版本”。</li><li>连续点击“版本号”7 次并验证锁屏密码。</li><li>ColorOS 14.1+ 通常进入“系统与更新 → 开发者选项”；较早版本位于“系统设置 / 其他设置”。</li><li>打开“USB 调试”并确认。</li></ol><code class="settings-path">关于设备 → 版本 → 版本号 × 7<br>系统与更新 / 系统设置 → 开发者选项</code></article>
 
             <article class="vendor-card"><span class="vendor-label">vivo / iQOO</span><h3>OriginOS / Funtouch OS</h3><ol><li>进入“设置 → 系统管理 → 关于手机 → 版本信息”。</li><li>连续点击“软件版本号”7 次。</li><li>返回“系统管理 → 开发者选项”。</li><li>打开“USB 调试”，连接时选择允许。</li></ol><code class="settings-path">系统管理 → 关于手机 → 软件版本号 × 7<br>系统管理 → 开发者选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">Samsung Galaxy</span><h3>三星 One UI</h3><ol><li>进入“设置 → 关于手机 → 软件信息”。</li><li>连续点击“编译编号 / Build number”7 次并输入锁屏密码。</li><li>返回设置首页，进入底部的“开发者选项”。</li><li>打开“USB 调试”，连接电脑后确认授权。</li></ol><code class="settings-path">关于手机 → 软件信息 → 编译编号 × 7<br>设置 → 开发者选项 → USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">三星 Galaxy</span><h3>三星 One UI</h3><ol><li>进入“设置 → 关于手机 → 软件信息”。</li><li>连续点击“编译编号”7 次并输入锁屏密码。</li><li>返回设置首页，进入底部的“开发者选项”。</li><li>打开“USB 调试”，连接电脑后确认授权。</li></ol><code class="settings-path">关于手机 → 软件信息 → 编译编号 × 7<br>设置 → 开发者选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">HONOR</span><h3>荣耀 MagicOS</h3><ol><li>进入“设置 → 关于手机”。</li><li>连续点击“版本号 / Build number”7 次。</li><li>返回“设置 → 系统和更新 → 开发人员选项”。</li><li>打开“USB 调试”并接受电脑的 RSA 指纹。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统和更新 → 开发人员选项 → USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">荣耀</span><h3>荣耀 MagicOS</h3><ol><li>进入“设置 → 关于手机”。</li><li>连续点击“版本号”7 次。</li><li>返回“设置 → 系统和更新 → 开发人员选项”。</li><li>打开“USB 调试”并接受电脑的 RSA 指纹。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统和更新 → 开发人员选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">HUAWEI EMUI</span><h3>华为 EMUI</h3><ol><li>进入“设置 → 关于手机”。</li><li>连续点击“版本号”7 次并输入锁屏密码。</li><li>进入“设置 → 系统和更新 → 开发人员选项”。</li><li>打开“USB 调试”；仅充电模式无法发现时，同时打开“仅充电模式下允许 ADB 调试”。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统和更新 → 开发人员选项 → USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">华为 EMUI</span><h3>华为 EMUI</h3><ol><li>进入“设置 → 关于手机”。</li><li>连续点击“版本号”7 次并输入锁屏密码。</li><li>进入“设置 → 系统和更新 → 开发人员选项”。</li><li>打开“USB 调试”；仅充电模式无法发现时，同时打开“仅充电模式下允许 ADB 调试”。</li></ol><code class="settings-path">关于手机 → 版本号 × 7<br>系统和更新 → 开发人员选项 → USB 调试</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">Meizu / 其他 Android</span><h3>魅族 Flyme 与其他品牌</h3><ol><li>优先在“设置 → 关于手机”连续点击“版本号 / 软件版本号”7 次。</li><li>回到“系统 / 辅助功能 / 更多设置”查找“开发者选项”。</li><li>打开“USB 调试”；如菜单与上述不同，直接使用设置搜索。</li><li>不需要开启 OEM unlocking，也不需要解锁 Bootloader。</li></ol><code class="settings-path">设置搜索 → 开发者选项 / USB 调试</code></article>
+            <article class="vendor-card"><span class="vendor-label">魅族 / 其他 Android</span><h3>魅族 Flyme 与其他品牌</h3><ol><li>优先在“设置 → 关于手机”连续点击“版本号 / 软件版本号”7 次。</li><li>回到“系统 / 辅助功能 / 更多设置”查找“开发者选项”。</li><li>打开“USB 调试”；如菜单与上述不同，直接使用设置搜索。</li><li>不需要开启“OEM 解锁”，也不需要解锁启动引导程序。</li></ol><code class="settings-path">设置搜索 → 开发者选项 / USB 调试</code></article>
           </div>
           <div class="usb-note"><p><strong>连接时最后一步：</strong>保持手机解锁，USB 用途可选“文件传输 / Android Auto”，在“是否允许 USB 调试”弹窗核对电脑 RSA 指纹后选择允许。只在自己的电脑上勾选“始终允许”。</p></div>
         </div>
@@ -74,43 +74,43 @@
 
       <section class="section section-soft usb-section" id="ios">
         <div class="container">
-          <div class="usb-section-head"><div><p class="eyebrow">iOS / USB pairing</p><h2>iPhone 与 iPad 信任电脑</h2></div><p class="lede">iOS 没有名为“USB 调试”的开关。普通识别只需完成 USB pairing；安装本地开发包、Xcode 调试或自动化控制时才需要 Developer Mode。</p></div>
+          <div class="usb-section-head"><div><p class="eyebrow">iOS / USB 配对</p><h2>iPhone 与 iPad 信任电脑</h2></div><p class="lede">iOS 没有名为“USB 调试”的开关。普通识别只需完成 USB 配对；安装本地开发包、Xcode 调试或自动化控制时才需要“开发者模式”。</p></div>
           <div class="vendor-grid">
-            <article class="vendor-card"><span class="vendor-label">所有 iPhone / iPad</span><h3>完成 USB pairing</h3><ol><li>使用支持数据传输的 USB‑C 或 Lightning 线连接电脑并解锁设备。</li><li>Mac 弹出“允许配件连接”时选择“允许”。</li><li>iPhone / iPad 出现“要信任此电脑吗？”时选择“信任”，并输入设备密码。</li><li>返回 AnyDeck 刷新设备列表。</li></ol><code class="settings-path">连接并解锁 → 允许配件 → 信任此电脑</code></article>
+            <article class="vendor-card"><span class="vendor-label">所有 iPhone / iPad</span><h3>完成 USB 配对</h3><ol><li>使用支持数据传输的 USB‑C 或 Lightning 线连接电脑并解锁设备。</li><li>Mac 弹出“允许配件连接”时选择“允许”。</li><li>iPhone / iPad 出现“要信任此电脑吗？”时选择“信任”，并输入设备密码。</li><li>返回 AnyDeck 刷新设备列表。</li></ol><code class="settings-path">连接并解锁 → 允许配件 → 信任此电脑</code></article>
 
-            <article class="vendor-card"><span class="vendor-label">iOS / iPadOS 16+</span><h3>按需开启 Developer Mode</h3><ol><li>先通过 Xcode / Device Hub 发起设备配对；否则“开发者模式”入口可能不会出现。</li><li>进入“设置 → 隐私与安全性 → 开发者模式”。</li><li>打开开关并按提示重启。</li><li>设备重启后解锁，确认“打开开发者模式”并输入密码。</li><li>重新连接 AnyDeck，继续 WDA 或开发调试流程。</li></ol><code class="settings-path">隐私与安全性 → 开发者模式 → 重启 → 确认</code></article>
+            <article class="vendor-card"><span class="vendor-label">iOS / iPadOS 16+</span><h3>按需开启开发者模式</h3><ol><li>先通过 Xcode 的设备管理窗口发起设备配对；否则“开发者模式”入口可能不会出现。</li><li>进入“设置 → 隐私与安全性 → 开发者模式”。</li><li>打开开关并按提示重启。</li><li>设备重启后解锁，确认“打开开发者模式”并输入密码。</li><li>重新连接 AnyDeck，继续 WDA 或开发调试流程。</li></ol><code class="settings-path">隐私与安全性 → 开发者模式 → 重启 → 确认</code></article>
           </div>
-          <div class="usb-note"><p><strong>安全边界：</strong>“信任此电脑”允许电脑访问设备信息；Developer Mode 允许运行本地开发签名应用。只对可信电脑授权，使用结束后可在“设置 → 通用 → 传输或还原 → 还原 → 还原位置与隐私”撤销已信任电脑。</p></div>
+          <div class="usb-note"><p><strong>安全边界：</strong>“信任此电脑”允许电脑访问设备信息；“开发者模式”允许运行本地开发签名应用。只对可信电脑授权，使用结束后可在“设置 → 通用 → 传输或还原 → 还原 → 还原位置与隐私”撤销已信任电脑。</p></div>
         </div>
       </section>
 
       <section class="section usb-section" id="verify">
         <div class="container">
-          <div class="usb-section-head"><div><p class="eyebrow">Connection check</p><h2>确认设备已经连通</h2></div><p class="lede">先用对应平台的 CLI 判断底层连接，再回到 AnyDeck 刷新。这样能快速区分系统授权问题与应用界面问题。</p></div>
+          <div class="usb-section-head"><div><p class="eyebrow">连接验证</p><h2>确认设备已经连通</h2></div><p class="lede">先用对应平台的命令行工具判断底层连接，再回到 AnyDeck 刷新。这样能快速区分系统授权问题与应用界面问题。</p></div>
           <div class="usb-check-grid">
             <article class="usb-check-card"><h3>Android / HarmonyOS</h3><p>Android 应显示 <code>device</code>；HarmonyOS 5+ 应在 HDC 列表中出现目标。</p><pre class="code-panel"><code>adb devices
 hdc list targets</code></pre><ul><li><code>unauthorized</code>：解锁手机并接受授权。</li><li><code>offline</code>：重新插拔数据线并刷新。</li><li>空列表：检查线缆、USB 口、系统开关与驱动。</li></ul></article>
-            <article class="usb-check-card"><h3>iPhone / iPad</h3><p>在安装 Xcode 的 Mac 上，可用 Device Control 查看已配对设备。</p><pre class="code-panel"><code>xcrun devicectl list devices</code></pre><ul><li>未出现：解锁设备并重新确认“信任此电脑”。</li><li>Developer Mode 缺失：先在 Xcode / Device Hub 发起配对。</li><li>Windows 需要 Apple Devices 与对应驱动；AnyDeck 的 iOS 开发能力以 macOS 为主。</li></ul></article>
+            <article class="usb-check-card"><h3>iPhone / iPad</h3><p>在安装 Xcode 的 Mac 上，可用设备控制命令查看已配对设备。</p><pre class="code-panel"><code>xcrun devicectl list devices</code></pre><ul><li>未出现：解锁设备并重新确认“信任此电脑”。</li><li>开发者模式缺失：先在 Xcode 的设备管理窗口发起配对。</li><li>Windows 需要“Apple 设备”应用与对应驱动；AnyDeck 的 iOS 开发能力以 macOS 为主。</li></ul></article>
           </div>
         </div>
       </section>
 
       <section class="section section-soft usb-section" id="troubleshooting">
         <div class="container">
-          <div class="usb-section-head"><div><p class="eyebrow">Troubleshooting</p><h2>连接后仍看不到设备？</h2></div><p class="lede">从物理链路到系统授权逐层排查，通常不需要重装 AnyDeck。</p></div>
+          <div class="usb-section-head"><div><p class="eyebrow">故障排查</p><h2>连接后仍看不到设备？</h2></div><p class="lede">从物理链路到系统授权逐层排查，通常不需要重装 AnyDeck。</p></div>
           <div class="usb-check-grid">
             <article class="usb-check-card"><h3>先检查这 5 项</h3><ol><li>线缆必须支持数据传输，不是仅充电线。</li><li>保持设备解锁，重新插拔并观察系统弹窗。</li><li>换用电脑直连 USB 口，暂时移除扩展坞。</li><li>Android 将 USB 用途切换为“文件传输”。</li><li>关闭占用设备的其他手机助手、IDE 或调试工具后刷新。</li></ol></article>
-            <article class="usb-check-card"><h3>重新触发授权</h3><ul><li><strong>Android：</strong>开发者选项中“撤销 USB 调试授权”，重连后再次允许。</li><li><strong>HarmonyOS：</strong>关闭再打开 USB 调试，确认当前是主空间且未受组织策略限制。</li><li><strong>iOS：</strong>还原“位置与隐私”后重连，再次选择“信任”。</li><li><strong>仍失败：</strong>记录设备型号、系统版本、CLI 输出和 AnyDeck 诊断日志后提交 Issue。</li></ul><a class="button secondary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">提交 GitHub Issue ↗</a></article>
+            <article class="usb-check-card"><h3>重新触发授权</h3><ul><li><strong>Android：</strong>开发者选项中“撤销 USB 调试授权”，重连后再次允许。</li><li><strong>HarmonyOS：</strong>关闭再打开 USB 调试，确认当前是主空间且未受组织策略限制。</li><li><strong>iOS：</strong>还原“位置与隐私”后重连，再次选择“信任”。</li><li><strong>仍失败：</strong>记录设备型号、系统版本、命令行输出和 AnyDeck 诊断日志后提交问题。</li></ul><a class="button secondary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">提交 GitHub 问题 ↗</a></article>
           </div>
         </div>
       </section>
 
       <section class="section usb-section" aria-labelledby="sources-title">
-        <div class="container"><p class="eyebrow">Official references</p><h2 id="sources-title">官方参考</h2><p class="lede">系统升级后菜单可能调整，以下官方说明可用于复核最新路径。</p><ul class="source-list"><li><a href="https://developer.android.com/studio/debug/dev-options" target="_blank" rel="noreferrer">Android Developers：配置设备端开发者选项 <span>打开 ↗</span></a></li><li><a href="https://consumer.huawei.com/cn/support/content/zh-cn00407281/" target="_blank" rel="noreferrer">华为：USB 调试与 HarmonyOS 版本差异 <span>打开 ↗</span></a></li><li><a href="https://www.mi.com/global/support/faq/details/KA-168765/" target="_blank" rel="noreferrer">小米：开启 Developer options <span>打开 ↗</span></a></li><li><a href="https://support.oppo.com/au/answer/?aid=neu9332" target="_blank" rel="noreferrer">OPPO：按 ColorOS 版本开启 USB debugging <span>打开 ↗</span></a></li><li><a href="https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/" target="_blank" rel="noreferrer">Samsung：开启 Developer options <span>打开 ↗</span></a></li><li><a href="https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device" target="_blank" rel="noreferrer">Apple Developer：开启 Developer Mode <span>打开 ↗</span></a></li><li><a href="https://support.apple.com/guide/iphone/connect-iphone-and-your-computer-with-a-cable-iph42d9b3178/ios" target="_blank" rel="noreferrer">Apple Support：使用线缆连接 iPhone 与电脑 <span>打开 ↗</span></a></li></ul></div>
+        <div class="container"><p class="eyebrow">官方资料</p><h2 id="sources-title">官方参考</h2><p class="lede">系统升级后菜单可能调整，以下官方说明可用于复核最新路径。</p><ul class="source-list"><li><a href="https://developer.android.com/studio/debug/dev-options" target="_blank" rel="noreferrer">Android 开发者文档：配置设备端开发者选项 <span>打开 ↗</span></a></li><li><a href="https://consumer.huawei.com/cn/support/content/zh-cn00407281/" target="_blank" rel="noreferrer">华为：USB 调试与 HarmonyOS 版本差异 <span>打开 ↗</span></a></li><li><a href="https://www.mi.com/global/support/faq/details/KA-168765/" target="_blank" rel="noreferrer">小米：开启开发者选项 <span>打开 ↗</span></a></li><li><a href="https://support.oppo.com/au/answer/?aid=neu9332" target="_blank" rel="noreferrer">OPPO：按 ColorOS 版本开启 USB 调试 <span>打开 ↗</span></a></li><li><a href="https://www.samsung.com/uk/support/mobile-devices/how-do-i-turn-on-the-developer-options-menu-on-my-samsung-galaxy-device/" target="_blank" rel="noreferrer">三星：开启开发者选项 <span>打开 ↗</span></a></li><li><a href="https://developer.apple.com/documentation/xcode/enabling-developer-mode-on-a-device" target="_blank" rel="noreferrer">Apple 开发者文档：开启开发者模式 <span>打开 ↗</span></a></li><li><a href="https://support.apple.com/guide/iphone/connect-iphone-and-your-computer-with-a-cable-iph42d9b3178/ios" target="_blank" rel="noreferrer">Apple 支持：使用线缆连接 iPhone 与电脑 <span>打开 ↗</span></a></li></ul></div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>本页指南</h3><div class="footer-links"><a href="#android">Android 厂商</a><a href="#harmonyos">HarmonyOS</a><a href="#ios">iPhone / iPad</a></div></div><div><h3>帮助</h3><div class="footer-links"><a href="help.html">帮助中心</a><a href="versions.html">版本参考</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>最后更新：2026-10-29</span></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>本页指南</h3><div class="footer-links"><a href="#android">Android 厂商</a><a href="#harmonyos">HarmonyOS</a><a href="#ios">iPhone / iPad</a></div></div><div><h3>帮助</h3><div class="footer-links"><a href="help.html">帮助中心</a><a href="versions.html">版本参考</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">问题反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck 贡献者。</span><span>最后更新：2026-10-29</span></div></div></footer>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>

@@ -20,7 +20,7 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">Help center</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">帮助中心</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
@@ -32,59 +32,59 @@
               <article class="help-card" data-search-item><div class="icon-box">API</div><h3>系统版本参考</h3><p>对照 Android、HarmonyOS 与 iOS 的版本和开发工具链。</p><a href="versions.html">查看对照表 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">USB</div><h3>USB 调试与设备信任</h3><p>按厂商查找 Android、HarmonyOS 与 iOS 的连接设置。</p><a href="usb-debugging.html">查看厂商指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
-              <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP Proxy，并管理 Forward / Reverse 端口映射。</p><a href="#network-tools">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP 代理，并管理正向与反向端口映射。</p><a href="#network-tools">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
-              <article class="help-card" data-search-item><div class="icon-box">›_</div><h3>运行控制台</h3><p>汇总桌面 App 日志、异常堆栈与命令失败。</p><a href="#console">查看指南 →</a></article>
-              <article class="help-card" data-search-item><div class="icon-box">✦</div><h3>AI MCP</h3><p>让 Cursor、Claude Desktop 或 AI Agent 调用真实设备工具。</p><a href="#ai-mcp">查看指南 →</a></article>
-              <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合 Logcat、Terminal、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">›_</div><h3>运行控制台</h3><p>汇总桌面应用日志、异常堆栈与命令失败。</p><a href="#console">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">✦</div><h3>AI MCP</h3><p>让 Cursor、Claude Desktop 或 AI 智能体调用真实设备工具。</p><a href="#ai-mcp">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合系统日志、终端、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
             </div>
 
             <div class="empty-state" data-empty-state>没有匹配的指南。可尝试“连接”“投屏”或“日志”。</div>
 
             <article class="article" id="quick-start" data-search-item>
               <h3>快速开始</h3>
-              <ol><li>在电脑安装 Android SDK platform-tools，并确认 <code>adb version</code> 可正常输出。</li><li>在 Android 设备开启 Developer options 与 USB debugging。</li><li>使用数据线连接设备，在手机弹窗中选择允许调试。</li><li>打开 AnyDeck，在设备列表选择目标设备，即可进入概览、控制、应用、文件或日志工作区。</li></ol>
+              <ol><li>在电脑安装 Android SDK 平台工具，并确认 <code>adb version</code> 可正常输出。</li><li>在 Android 设备开启“开发者选项”与“USB 调试”。</li><li>使用数据线连接设备，在手机弹窗中选择允许调试。</li><li>打开 AnyDeck，在设备列表选择目标设备，即可进入概览、控制、应用、文件或日志工作区。</li></ol>
               <p>macOS 可使用 <code>brew install android-platform-tools scrcpy</code> 准备基础工具；Windows 可使用 Chocolatey 或 Scoop 安装 ADB。</p>
             </article>
 
             <article class="article" id="connect-usb" data-search-item>
               <h3>通过 USB 连接设备</h3>
-              <ol><li>Android 开启 Developer options 与 USB debugging；HarmonyOS 按系统版本开启 ADB 或 HDC 调试。</li><li>iPhone / iPad 解锁后确认“信任此电脑”；需要安装开发包或自动化控制时再开启 Developer Mode。</li><li>使用支持数据传输的线缆连接电脑，并在手机上确认调试或配对授权。</li><li>返回 AnyDeck 刷新设备列表，确认状态为已连接。</li></ol>
+              <ol><li>Android 开启“开发者选项”与“USB 调试”；HarmonyOS 按系统版本开启 ADB 或 HDC 调试。</li><li>iPhone / iPad 解锁后确认“信任此电脑”；需要安装开发包或自动化控制时再开启“开发者模式”。</li><li>使用支持数据传输的线缆连接电脑，并在手机上确认调试或配对授权。</li><li>返回 AnyDeck 刷新设备列表，确认状态为已连接。</li></ol>
               <p>不同厂商的菜单位置与额外开关请查看 <a href="usb-debugging.html"><strong>USB 调试与设备信任完整指南 →</strong></a>。Android 显示 <code>unauthorized</code> 时请解锁手机并重新确认 RSA 授权；显示 <code>offline</code> 时可重新插拔 USB 后刷新。</p>
             </article>
 
             <article class="article" id="connect-wifi" data-search-item>
               <h3>通过 Wi‑Fi 连接</h3>
-              <p>Android 11+ 推荐使用 Wireless debugging 的 QR code 或 pairing code。电脑与手机需要在同一可互访局域网。</p>
-              <ol><li>先在手机打开 Wireless debugging。</li><li>在 AnyDeck 设备管理中选择配对方式，录入 IP、pairing port 与 pairing code，或使用二维码流程。</li><li>配对成功后选择 debugging port 建立连接。</li></ol>
-              <p>连接超时通常与 VPN、系统 firewall、路由器 AP isolation 或 IP/port 变化有关。</p>
+              <p>Android 11+ 推荐使用“无线调试”的二维码或配对码。电脑与手机需要在同一可互访局域网。</p>
+              <ol><li>先在手机打开“无线调试”。</li><li>在 AnyDeck 设备管理中选择配对方式，录入 IP、配对端口与配对码，或使用二维码流程。</li><li>配对成功后选择调试端口建立连接。</li></ol>
+              <p>连接超时通常与 VPN、系统防火墙、路由器接入点隔离或 IP/端口变化有关。</p>
             </article>
 
             <article class="article" id="network-tools" data-search-item>
               <h3>配置 HTTP 正向代理与端口转发</h3>
-              <p>三种能力解决的问题不同：设备 HTTP 正向代理把 Android 的 HTTP 流量交给电脑上的代理服务；Forward Port Mapping 让电脑访问设备端 TCP 服务；Reverse Port Mapping 让 Android 应用访问电脑上的本地开发服务。</p>
-              <ol><li><strong>Android HTTP Proxy：</strong>填写电脑在局域网中的 IPv4 地址与代理端口，例如 <code>192.168.1.8:8888</code>，应用后可回读当前值，也可一键清除恢复直连。</li><li><strong>Forward：</strong>填写电脑端与设备端 TCP 端口，流向为“电脑 localhost → 设备 localhost”。Android 与 HarmonyOS 均支持手动创建、查看和删除。</li><li><strong>Reverse：</strong>填写设备端与电脑端 TCP 端口，流向为“设备 localhost → 电脑 localhost”。当前支持 Android，可保存预设并在设备连接后自动应用。</li></ol>
+              <p>三种能力解决的问题不同：设备 HTTP 正向代理把 Android 的 HTTP 流量交给电脑上的代理服务；正向端口映射让电脑访问设备端 TCP 服务；反向端口映射让 Android 应用访问电脑上的本地开发服务。</p>
+              <ol><li><strong>Android HTTP 代理：</strong>填写电脑在局域网中的 IPv4 地址与代理端口，例如 <code>192.168.1.8:8888</code>，应用后可回读当前值，也可一键清除恢复直连。</li><li><strong>正向映射：</strong>填写电脑端与设备端 TCP 端口，流向为“电脑 localhost → 设备 localhost”。Android 与 HarmonyOS 均支持手动创建、查看和删除。</li><li><strong>反向映射：</strong>填写设备端与电脑端 TCP 端口，流向为“设备 localhost → 电脑 localhost”。当前支持 Android，可保存预设并在设备连接后自动应用。</li></ol>
               <pre class="code-panel"><code>adb forward tcp:9222 tcp:9222
 hdc fport tcp:9222 tcp:9222
 adb reverse tcp:8081 tcp:8081</code></pre>
-              <p><strong>能力边界：</strong>端口映射仅支持 TCP，端口范围为 1–65535。设备 HTTP Proxy 当前仅支持 Android 全局 HTTP proxy，不等同于 VPN，也不支持身份认证、SOCKS、PAC 或按 App 分流；HarmonyOS 暂无对应的 HDC Proxy 配置。</p>
+              <p><strong>能力边界：</strong>端口映射仅支持 TCP，端口范围为 1–65535。设备 HTTP 代理当前仅支持 Android 全局代理，不等同于 VPN，也不支持身份认证、SOCKS、PAC 或按应用分流；HarmonyOS 暂无对应的 HDC 代理配置。</p>
             </article>
 
             <article class="article" id="mirroring" data-search-item>
               <h3>打开投屏并控制设备</h3>
-              <p>从设备行或工作区顶部打开 Mirror window。投屏窗口支持鼠标触控、键盘输入、Back、Home、Power、音量、旋转、截图与独立窗口缩放。</p>
-              <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android Back。</li><li>鼠标中键默认映射为 Android Home。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+              <p>从设备行或工作区顶部打开投屏窗口。投屏窗口支持鼠标触控、键盘输入、返回、主页、电源、音量、旋转、截图与独立窗口缩放。</p>
+              <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android 返回键。</li><li>鼠标中键默认映射为 Android 主页键。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
             </article>
 
             <article class="article" id="airplay" data-search-item>
               <h3>使用 iOS AirPlay 无线投屏</h3>
-              <p>macOS 版 AnyDeck 可作为 AirPlay Receiver，接收 iPhone 或 iPad 的无线屏幕镜像，并在独立窗口播放画面与设备音频。</p>
-              <ol><li>让 iPhone / iPad 与 Mac 连接同一个可互访的 Wi‑Fi；关闭可能阻断局域网发现的 VPN 或 AP isolation。</li><li>在 AnyDeck 中启动 AirPlay Receiver，并确认页面显示接收名称 <code>AnyDeck-AirPlay</code>。</li><li>在 iPhone / iPad 打开“控制中心”，点击“屏幕镜像”，选择 <code>AnyDeck-AirPlay</code>。</li><li>等待 AnyDeck 打开投屏窗口。结束时回到“屏幕镜像”，点击“停止镜像”。</li></ol>
-              <p><strong>能力边界：</strong>当前 AirPlay Receiver 是仅支持 macOS 的实验性能力，不提供从 Mac 反向控制 iPhone / iPad。HLS、HEVC 与 DRM 保护内容不属于当前兼容范围；连接质量还会受到 Wi‑Fi、路由器隔离和系统版本影响。</p>
+              <p>macOS 版 AnyDeck 可作为 AirPlay 接收端，接收 iPhone 或 iPad 的无线屏幕镜像，并在独立窗口播放画面与设备音频。</p>
+              <ol><li>让 iPhone / iPad 与 Mac 连接同一个可互访的 Wi‑Fi；关闭可能阻断局域网发现的 VPN 或接入点隔离。</li><li>在 AnyDeck 中启动 AirPlay 接收服务，并确认页面显示接收名称 <code>AnyDeck-AirPlay</code>。</li><li>在 iPhone / iPad 打开“控制中心”，点击“屏幕镜像”，选择 <code>AnyDeck-AirPlay</code>。</li><li>等待 AnyDeck 打开投屏窗口。结束时回到“屏幕镜像”，点击“停止镜像”。</li></ol>
+              <p><strong>能力边界：</strong>当前 AirPlay 接收服务是仅支持 macOS 的实验性能力，不提供从 Mac 反向控制 iPhone / iPad。HLS、HEVC 与 DRM 保护内容不属于当前兼容范围；连接质量还会受到 Wi‑Fi、路由器隔离和系统版本影响。</p>
             </article>
 
             <article class="article" id="video-cast" data-search-item>
@@ -98,27 +98,27 @@ adb reverse tcp:8081 tcp:8081</code></pre>
               <h3>统一管理本地模拟器</h3>
               <p>AnyDeck 会扫描本机已有的 Android AVD、DevEco Emulator 与 Xcode Simulator，在同一个列表中展示平台、系统版本、分辨率、SDK、ABI、内存、存储与运行状态。</p>
               <ol><li>从左侧导航进入“模拟器管理”，选择 Android、HarmonyOS 或 iOS 平台。</li><li>使用名称或规格搜索目标模拟器，并查看配置详情。</li><li>选择模拟器后执行启动、停止、冷启动、刷新或打开配置目录。</li><li>启动失败时点击错误状态，查看并复制有界诊断日志。</li></ol>
-              <p><strong>边界说明：</strong>AnyDeck 管理已由 Android Studio、DevEco Studio 或 Xcode 创建的模拟器，不自动下载 System Image，也不代替对应 IDE 创建新设备。</p>
+              <p><strong>边界说明：</strong>AnyDeck 管理已由 Android Studio、DevEco Studio 或 Xcode 创建的模拟器，不自动下载系统镜像，也不代替对应开发工具创建新设备。</p>
             </article>
 
             <article class="article" id="app-analysis" data-search-item>
               <h3>分析 APK 与已安装应用</h3>
-              <p>应用分析统一展示名称、包名或 Bundle、版本、SDK、ABI、DEBUG 状态与文件信息，并按 Tab 查看组件、权限、Metadata、DEX、签名证书和原生库。</p>
-              <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过 Finder 使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、Minimum SDK、Target SDK 与 ABI。</li><li>切换组件、权限、签名和原生库 Tab，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
-              <p><strong>边界说明：</strong>本地 APK 的权限表示 Manifest 声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
+              <p>应用分析统一展示名称、包名或应用标识、版本、SDK、ABI、调试状态与文件信息，并按标签页查看组件、权限、元数据、DEX、签名证书和原生库。</p>
+              <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过“访达”使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、最低 SDK、目标 SDK 与 ABI。</li><li>切换组件、权限、签名和原生库标签页，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
+              <p><strong>边界说明：</strong>本地 APK 的权限表示清单文件声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
             </article>
 
             <article class="article" id="console" data-search-item>
               <h3>使用 AnyDeck 运行控制台</h3>
-              <p>运行控制台用于排查 AnyDeck 桌面 App 自身的问题。它会实时汇总主窗口与投屏等子窗口的运行日志、异常堆栈，以及 ADB / HDC 命令失败，无需连接手机也可打开。</p>
-              <ol><li>打开 AnyDeck 的“控制台”独立窗口，查看当前会话的实时日志。</li><li>使用关键词搜索窗口来源、命令或错误内容；打开“仅关键日志”可只看 Warning、Error 与 Fatal。</li><li>按需隐藏设备心跳日志，并开启自动滚动跟随最新记录。</li><li>复现问题后复制相关记录，或使用“导出”保存包含保留历史会话的 <code>.log</code> 诊断文件。</li><li>分享日志前检查其中可能存在的设备标识、本地路径或业务数据。</li></ol>
-              <p><strong>日志边界：</strong>清空控制台只会清理当前显示，不会删除磁盘中的诊断记录。控制台不等同于手机 Logcat，也不会采集未转发到 Dart 的 native stderr 或系统 native crash report。</p>
+              <p>运行控制台用于排查 AnyDeck 桌面应用自身的问题。它会实时汇总主窗口与投屏等子窗口的运行日志、异常堆栈，以及 ADB / HDC 命令失败，无需连接手机也可打开。</p>
+              <ol><li>打开 AnyDeck 的“控制台”独立窗口，查看当前会话的实时日志。</li><li>使用关键词搜索窗口来源、命令或错误内容；打开“仅关键日志”可只看警告、错误与严重错误。</li><li>按需隐藏设备心跳日志，并开启自动滚动跟随最新记录。</li><li>复现问题后复制相关记录，或使用“导出”保存包含保留历史会话的 <code>.log</code> 诊断文件。</li><li>分享日志前检查其中可能存在的设备标识、本地路径或业务数据。</li></ol>
+              <p><strong>日志边界：</strong>清空控制台只会清理当前显示，不会删除磁盘中的诊断记录。控制台不等同于手机系统日志，也不会采集未转发到 Dart 的原生标准错误或系统原生崩溃报告。</p>
             </article>
 
             <article class="article" id="ai-mcp" data-search-item>
-              <h3>连接 AI Client 与 AnyDeck MCP Server</h3>
-              <p>AnyDeck 通过 HTTP SSE 提供 22 项 MCP Tools，覆盖设备发现、截图与 UI 操作、应用生命周期、Logcat、Crash、文件传输和受控 Shell。不同平台实际可用工具以当前设备能力为准。</p>
-              <ol><li>进入 AnyDeck 的“AI MCP”页面，确认监听地址与端口后启动服务。</li><li>按需启用工具；不需要的写入、卸载、清数据或 Shell 工具保持关闭。</li><li>在 Cursor、Claude Desktop、Cline、Windsurf 或其他 MCP Client 中添加 SSE 地址。</li><li>连接成功后先调用 <code>list_devices</code>，再让 AI 针对明确的设备执行截图、分析或诊断操作。</li><li>在 AnyDeck 审计日志中检查请求参数、耗时、结果和错误。</li></ol>
+              <h3>连接 AI 客户端与 AnyDeck MCP 服务</h3>
+              <p>AnyDeck 通过 HTTP SSE 提供 22 项 MCP 工具，覆盖设备发现、截图与界面操作、应用生命周期、系统日志、崩溃、文件传输和受控命令行。不同平台实际可用工具以当前设备能力为准。</p>
+              <ol><li>进入 AnyDeck 的“AI MCP”页面，确认监听地址与端口后启动服务。</li><li>按需启用工具；不需要的写入、卸载、清数据或命令行工具保持关闭。</li><li>在 Cursor、Claude Desktop、Cline、Windsurf 或其他 MCP 客户端中添加 SSE 地址。</li><li>连接成功后先调用 <code>list_devices</code>，再让 AI 针对明确的设备执行截图、分析或诊断操作。</li><li>在 AnyDeck 审计日志中检查请求参数、耗时、结果和错误。</li></ol>
               <pre class="code-panel"><code>{
   "mcpServers": {
     "anydeck": {
@@ -126,7 +126,7 @@ adb reverse tcp:8081 tcp:8081</code></pre>
     }
   }
 }</code></pre>
-              <p><strong>安全说明：</strong>默认仅监听本机地址，并提供工具级开关、高危命令黑名单和调用审计。MCP Client 获得的是实际设备操作能力，只连接可信 Client，并在执行卸载、清数据、文件写入或 Shell 前核对目标设备与参数。</p>
+              <p><strong>安全说明：</strong>默认仅监听本机地址，并提供工具级开关、高危命令黑名单和调用审计。MCP 客户端获得的是实际设备操作能力，只连接可信客户端，并在执行卸载、清数据、文件写入或命令行操作前核对目标设备与参数。</p>
             </article>
 
             <article class="article" id="app-files" data-search-item>
@@ -136,22 +136,22 @@ adb reverse tcp:8081 tcp:8081</code></pre>
             </article>
 
             <article class="article" id="diagnostics" data-search-item>
-              <h3>使用 Logcat、Terminal 与布局分析</h3>
-              <p>Logcat 适合观察实时系统与 App 日志；Terminal 提供交互式 ADB Shell；布局分析会读取当前界面的 XML hierarchy，并与截图区域关联。</p>
-              <ol><li>先确认目标设备，避免日志与命令发往其他连接。</li><li>Logcat 使用 package、tag 或关键词缩小范围。</li><li>需要复现崩溃时，先清空无关日志，再执行复现步骤。</li><li>布局抓取为空时，确认页面未使用受保护 Surface，并尝试刷新。</li></ol>
+              <h3>使用系统日志、终端与布局分析</h3>
+              <p>系统日志适合观察实时系统与应用日志；终端提供交互式 ADB 命令行；布局分析会读取当前界面的 XML 层级，并与截图区域关联。</p>
+              <ol><li>先确认目标设备，避免日志与命令发往其他连接。</li><li>系统日志使用包名、标签或关键词缩小范围。</li><li>需要复现崩溃时，先清空无关日志，再执行复现步骤。</li><li>布局抓取为空时，确认页面未使用受保护画面，并尝试刷新。</li></ol>
             </article>
 
             <article class="article" id="troubleshooting" data-search-item>
               <h3>常见连接问题</h3>
-              <ul><li><strong>找不到 ADB：</strong>将 platform-tools 加入 PATH，或从 Android SDK 目录执行。</li><li><strong>设备未出现：</strong>更换支持数据传输的线缆与 USB 端口，随后运行 <code>adb devices</code> 交叉检查。</li><li><strong>无线连接被拒绝：</strong>确认配对端口与连接端口没有混用，并检查手机 IP 是否变化。</li><li><strong>投屏启动失败：</strong>确认只有一个有效设备目标、USB/Wi‑Fi 链路稳定，并查看 AnyDeck 本地诊断日志。</li><li><strong>仍无法解决：</strong>导出诊断信息后，在 GitHub Issues 描述系统版本、设备型号、连接方式与复现步骤。</li></ul>
-              <a class="button secondary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">前往 GitHub Issues ↗</a>
+              <ul><li><strong>找不到 ADB：</strong>将平台工具加入 PATH，或从 Android SDK 目录执行。</li><li><strong>设备未出现：</strong>更换支持数据传输的线缆与 USB 端口，随后运行 <code>adb devices</code> 交叉检查。</li><li><strong>无线连接被拒绝：</strong>确认配对端口与连接端口没有混用，并检查手机 IP 是否变化。</li><li><strong>投屏启动失败：</strong>确认只有一个有效设备目标、USB/Wi‑Fi 链路稳定，并查看 AnyDeck 本地诊断日志。</li><li><strong>仍无法解决：</strong>导出诊断信息后，在 GitHub 问题页面描述系统版本、设备型号、连接方式与复现步骤。</li></ul>
+              <a class="button secondary" href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">前往 GitHub 问题页面 ↗</a>
             </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="usb-debugging.html">USB 调试指南</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">Issue 反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck contributors.</span><span>最后更新：2026-10-29</span></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="usb-debugging.html">USB 调试指南</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">问题反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck 贡献者。</span><span>最后更新：2026-10-29</span></div></div></footer>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>
