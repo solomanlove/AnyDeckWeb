@@ -12,11 +12,12 @@ for (const page of pages) {
   if (!html.includes('<html lang="zh-CN">')) failures.push(`${page}: 缺少中文语言声明`);
   if (!html.includes('name="viewport"')) failures.push(`${page}: 缺少移动端 viewport`);
   if (!html.includes('<title>')) failures.push(`${page}: 缺少 title`);
-  if (!html.includes('class="nav-dropdown"') || !html.includes('aria-label="功能菜单"')) {
-    failures.push(`${page}: 版本参考必须收进功能菜单`);
+  const header = html.match(/<header class="site-header">[\s\S]*?<\/header>/)?.[0] ?? '';
+  if (!/<a href="index\.html#features"(?: aria-current="page")?>产品功能<\/a>/.test(header)) {
+    failures.push(`${page}: 顶部导航缺少产品功能入口`);
   }
-  if (html.includes('<a href="index.html#features">功能</a><a href="versions.html"')) {
-    failures.push(`${page}: 版本参考不能保留为一级导航`);
+  if (header.includes('class="nav-dropdown"') || header.includes('功能概览') || header.includes('版本参考')) {
+    failures.push(`${page}: 顶部导航不应保留功能下拉菜单或版本参考`);
   }
 
   for (const match of html.matchAll(/(?:href|src)="([^"#][^"]*)"/g)) {
