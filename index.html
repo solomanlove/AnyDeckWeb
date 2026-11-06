@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、端口转发、设备 HTTP 正向代理、运行控制台、模拟器管理、应用分析、无线投屏与 AI MCP 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、投屏白板标注、端口转发、运行控制台、模拟器管理、应用分析与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
     <link rel="stylesheet" href="assets/css/styles.css?v=20261028b">
+    <link rel="stylesheet" href="assets/css/mirror-whiteboard.css">
   </head>
   <body>
     <header class="site-header">
@@ -93,12 +94,36 @@
           </div>
           <div class="feature-grid">
             <article class="feature-card"><div class="icon-box">⌁</div><h3>设备连接</h3><p>自动发现 USB 设备，并支持 TCP/IP、二维码与配对码等无线连接方式。</p></article>
-            <article class="feature-card"><div class="icon-box">▣</div><h3>投屏与控制</h3><p>低延迟画面、鼠标触控、键盘输入、物理按键和屏幕旋转都在独立窗口完成。</p></article>
+            <article class="feature-card"><div class="icon-box">▣</div><h3>投屏与控制</h3><p>低延迟画面、鼠标触控与键盘输入都在独立窗口完成。演示时可切换白板画笔，直接在电脑端画面上标记重点。</p><a class="text-link" href="help.html#mirror-whiteboard">查看投屏白板指南 →</a></article>
             <article class="feature-card"><div class="icon-box">◫</div><h3>应用管理</h3><p>检索、安装、卸载、清除数据、冻结、解冻及 APK 备份，覆盖常见维护动作。</p></article>
             <article class="feature-card"><div class="icon-box">⌘</div><h3>Logcat 与 Terminal</h3><p>过滤实时日志，并在多标签 ADB Shell 中复用命令历史与常用诊断命令。</p></article>
             <article class="feature-card"><div class="icon-box">⌗</div><h3>布局与截图</h3><p>将截图与 XML 节点树放在同一画布，支持矩形、圆形、画笔和马赛克编辑，完成后保存或复制图片。</p><a class="text-link" href="help.html#screenshot-editing">查看截图编辑指南 →</a></article>
             <article class="feature-card"><div class="icon-box">◌</div><h3>性能与进程</h3><p>查看关键资源状态、进程与前台窗口，让现场问题保留更完整的上下文。</p></article>
           </div>
+        </div>
+      </section>
+
+      <section class="section mirror-whiteboard" id="mirror-whiteboard">
+        <div class="container mirror-whiteboard-grid">
+          <div class="mirror-whiteboard-copy">
+            <p class="eyebrow">投屏白板</p>
+            <h2>讲到哪里，<br>就画到哪里。</h2>
+            <p class="lede">在 Android、HarmonyOS，或 macOS 版的 iPhone 投屏窗口点击画笔，鼠标就能在电脑端画面上划线、圈出重点。白板模式会暂停向手机发送画面操作，退出后继续控制设备。</p>
+            <div class="mirror-whiteboard-actions" aria-label="白板操作"><span>六种颜色</span><span>撤销上一笔</span><span>清空笔迹</span></div>
+            <p class="mirror-whiteboard-note">笔迹只保存在当前投屏窗口；设备截图与录屏不会包含电脑端标注。</p>
+            <a class="button secondary" href="help.html#mirror-whiteboard">查看白板使用指南 →</a>
+          </div>
+          <figure class="mirror-whiteboard-preview" role="img" aria-label="AnyDeck 投屏白板功能示意：画笔开启后，可在手机画面上绘制绿色标记，右侧显示颜色、撤销和清空按钮">
+            <div class="whiteboard-window" aria-hidden="true">
+              <div class="whiteboard-window-title"><span class="whiteboard-window-dot"></span><strong>AnyDeck · 设备投屏</strong><span>白板已开启</span></div>
+              <div class="whiteboard-window-body">
+                <div class="whiteboard-phone"><div class="whiteboard-phone-screen"><div class="whiteboard-phone-status">9:41 <span>●●● ▰</span></div><div class="whiteboard-screen-card"><small>演示内容</small><strong>这一段是重点</strong><span></span><span></span><span></span></div><svg class="whiteboard-mark" viewBox="0 0 260 350" fill="none" aria-hidden="true"><path d="M40 164C67 133 145 119 190 136C226 150 228 205 184 227C139 250 57 236 42 209C34 195 35 181 40 164Z" stroke="#27cf75" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+                <div class="whiteboard-toolrail"><span>⛶</span><span>▣</span><span class="whiteboard-tool-active">✎</span><span>⌨</span><span>⚙</span></div>
+                <div class="whiteboard-palette"><span class="whiteboard-color"></span><span>↶</span><span>⌫</span></div>
+              </div>
+            </div>
+            <figcaption>功能示意 · 标注显示在电脑端投屏画面上</figcaption>
+          </figure>
         </div>
       </section>
 

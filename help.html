@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏、代理、端口转发、运行控制台、截图图片编辑、AI MCP 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏与白板标注、代理、端口转发、截图图片编辑、AI MCP 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,12 +20,12 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">帮助中心</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、截图图片编辑、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、截图编辑、马赛克…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">帮助中心</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏白板、截图图片编辑、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、投屏白板、截图编辑…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="usb-debugging.html">USB 调试指南</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#screenshot-editing">截图图片编辑</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="usb-debugging.html">USB 调试指南</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#mirror-whiteboard">投屏白板</a><a href="#screenshot-editing">截图图片编辑</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
@@ -34,6 +34,7 @@
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP 代理，并管理正向与反向端口映射。</p><a href="#network-tools">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">✎</div><h3>投屏白板</h3><p>在实时投屏画面上划线、标记重点，随时改色、撤销或清空。</p><a href="#mirror-whiteboard">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">✎</div><h3>截图图片编辑</h3><p>用矩形、圆形、画笔和马赛克标注截图，完成后保存或复制图片。</p><a href="#screenshot-editing">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
@@ -79,6 +80,19 @@ adb reverse tcp:8081 tcp:8081</code></pre>
               <h3>打开投屏并控制设备</h3>
               <p>从设备行或工作区顶部打开投屏窗口。投屏窗口支持鼠标触控、键盘输入、返回、主页、电源、音量、旋转、截图与独立窗口缩放。</p>
               <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android 返回键。</li><li>鼠标中键默认映射为 Android 主页键。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+              <p>演示或讲解画面时，可切换到<a href="#mirror-whiteboard">投屏白板</a>，直接在电脑端标记重点。</p>
+            </article>
+
+            <article class="article" id="mirror-whiteboard" data-search-item>
+              <h3>在投屏画面上使用白板</h3>
+              <p>白板适合文档演示和界面讲解。Android、HarmonyOS，以及 macOS 版的 iOS USB 与 AirPlay 投屏窗口都可在电脑端画面上显示笔迹。</p>
+              <ol>
+                <li>打开投屏窗口，点击右侧工具栏、截图按钮附近的画笔 icon，开启白板模式。</li>
+                <li>将鼠标移到手机画面上，按住左键拖动即可划线或圈出重点；单击也能留下一个圆点。</li>
+                <li>使用画笔下方的三个按钮：第一个选择红、黄、绿、蓝、黑、白六种颜色；第二个撤销上一笔；第三个清空当前窗口的全部笔迹。</li>
+                <li>再次点击画笔 icon 退出白板模式，已有标记仍会显示；此时可继续用鼠标和键盘控制手机。需要继续画时，再次开启白板。</li>
+              </ol>
+              <p><strong>标注边界：</strong>白板开启时，画面上的点击、拖动、右键、滚轮与键盘输入不会发送给手机。笔迹只保存在当前投屏窗口，不会写入手机屏幕；现有设备截图和录屏不会包含电脑端笔迹。关闭投屏窗口或切换视频方向后，笔迹会清除。每个窗口最多保留 200 笔。</p>
             </article>
 
             <article class="article" id="screenshot-editing" data-search-item>

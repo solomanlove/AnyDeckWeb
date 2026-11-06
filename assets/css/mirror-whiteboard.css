@@ -1,0 +1,230 @@
+.mirror-whiteboard {
+  overflow: hidden;
+  background: radial-gradient(circle at 82% 24%, rgba(39, 207, 117, 0.16), transparent 36%), #eef8f2;
+}
+
+.mirror-whiteboard-grid {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: center;
+  gap: 72px;
+}
+
+.mirror-whiteboard .eyebrow {
+  color: var(--brand-dark);
+}
+
+.mirror-whiteboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 26px 0 18px;
+}
+
+.mirror-whiteboard-actions span {
+  padding: 7px 12px;
+  border: 1px solid #c9e9d8;
+  border-radius: 999px;
+  color: #176b47;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.mirror-whiteboard-note {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.mirror-whiteboard-preview {
+  min-width: 0;
+  margin: 0;
+}
+
+.whiteboard-window {
+  overflow: hidden;
+  border: 1px solid #cadfd2;
+  border-radius: 23px;
+  background: #f8fbf9;
+  box-shadow: 0 30px 70px rgba(19, 84, 52, 0.16);
+}
+
+.whiteboard-window-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  border-bottom: 1px solid #dcece3;
+  color: #476557;
+  font-size: 12px;
+}
+
+.whiteboard-window-title strong {
+  margin-right: auto;
+  color: #193f2b;
+}
+
+.whiteboard-window-title > span:last-child {
+  color: #067a55;
+  font-weight: 750;
+}
+
+.whiteboard-window-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #27cf75;
+  box-shadow: 0 0 0 4px rgba(39, 207, 117, 0.15);
+}
+
+.whiteboard-window-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 16px;
+  background: linear-gradient(155deg, #dfeee6, #f2f8f4 68%);
+}
+
+.whiteboard-phone {
+  width: min(65%, 260px);
+  padding: 7px;
+  border: 3px solid #1e2b25;
+  border-radius: 29px;
+  background: #111c16;
+  box-shadow: 0 18px 28px rgba(15, 45, 27, 0.19);
+}
+
+.whiteboard-phone-screen {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 0.65;
+  border-radius: 20px;
+  background: linear-gradient(170deg, #dceadf, #f6f5e9 58%, #d1e7dc);
+}
+
+.whiteboard-phone-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 14px;
+  color: #335944;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.whiteboard-screen-card {
+  display: grid;
+  gap: 12px;
+  margin: 25% 9% 0;
+  padding: 14%;
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(49, 89, 66, 0.12);
+}
+
+.whiteboard-screen-card small {
+  color: #7a9684;
+}
+
+.whiteboard-screen-card strong {
+  color: #204733;
+  font-size: clamp(13px, 1.6vw, 17px);
+}
+
+.whiteboard-screen-card span {
+  height: 5px;
+  border-radius: 99px;
+  background: #d7e5db;
+}
+
+.whiteboard-screen-card span:last-child {
+  width: 60%;
+}
+
+.whiteboard-mark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.whiteboard-toolrail,
+.whiteboard-palette {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  padding: 12px 5px;
+  border: 1px solid #d5e5da;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(35, 77, 48, 0.11);
+}
+
+.whiteboard-toolrail span,
+.whiteboard-palette span {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  color: #466252;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.whiteboard-toolrail .whiteboard-tool-active {
+  border-radius: 8px;
+  color: #067a55;
+  background: #e5f8ed;
+}
+
+.whiteboard-palette {
+  align-self: center;
+}
+
+.whiteboard-palette .whiteboard-color::before {
+  width: 17px;
+  height: 17px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  background: #27cf75;
+  box-shadow: 0 0 0 1px #8ccfa7;
+  content: "";
+}
+
+.mirror-whiteboard-preview figcaption {
+  margin-top: 12px;
+  color: #638171;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .mirror-whiteboard-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whiteboard-window-title {
+    padding: 0 10px;
+  }
+
+  .whiteboard-window-body {
+    gap: 6px;
+    padding: 14px 8px;
+  }
+
+  .whiteboard-toolrail,
+  .whiteboard-palette {
+    gap: 7px;
+    padding: 8px 2px;
+  }
+
+  .whiteboard-toolrail span,
+  .whiteboard-palette span {
+    width: 25px;
+    height: 25px;
+  }
+}

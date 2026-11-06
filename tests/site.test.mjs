@@ -32,7 +32,7 @@ for (const page of pages) {
 }
 
 const help = readFileSync(join(root, 'help.html'), 'utf8');
-for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'screenshot-editing', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
+for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'mirror-whiteboard', 'screenshot-editing', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
@@ -57,6 +57,14 @@ const editingArticle = help.match(/<article\b(?=[^>]*\bid="screenshot-editing")[
 const helpSidebar = help.match(/<aside class="help-sidebar"[^>]*>[\s\S]*?<\/aside>/)?.[0] ?? '';
 const helpCards = [...help.matchAll(/<article class="help-card"[^>]*>[\s\S]*?<\/article>/g)].map((match) => match[0]);
 const editingCard = helpCards.find((card) => card.includes('href="#screenshot-editing"')) ?? '';
+const whiteboardArticle = help.match(/<article\b(?=[^>]*\bid="mirror-whiteboard")[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
+const whiteboardCard = helpCards.find((card) => card.includes('href="#mirror-whiteboard"')) ?? '';
+if (!home.includes('href="help.html#mirror-whiteboard"') || !home.includes('id="mirror-whiteboard"')) failures.push('index.html: 缺少投屏白板功能展示与帮助入口');
+if (!helpSidebar.includes('href="#mirror-whiteboard"')) failures.push('help.html: 帮助目录缺少投屏白板入口');
+if (!whiteboardCard.includes('data-search-item') || !whiteboardArticle.includes('data-search-item')) failures.push('help.html: 投屏白板卡片与正文必须可被帮助搜索发现');
+for (const whiteboardCopy of ['Android', 'HarmonyOS', 'iOS USB', 'AirPlay', '画笔 icon', '拖动', '六种颜色', '撤销上一笔', '清空', '再次点击', '不会发送给手机', '截图和录屏不会包含', '200 笔']) {
+  if (!whiteboardArticle.includes(whiteboardCopy)) failures.push(`help.html: 投屏白板正文缺少操作或边界说明 ${whiteboardCopy}`);
+}
 if (!home.includes('href="help.html#screenshot-editing"')) failures.push('index.html: 缺少图片编辑帮助入口');
 if (!helpSidebar.includes('href="#screenshot-editing"')) failures.push('help.html: 帮助目录缺少图片编辑入口');
 if (!editingCard.includes('data-search-item') || !editingArticle.includes('data-search-item')) {
@@ -100,6 +108,9 @@ if (typeof search !== 'function') {
   if (!searchableArticles.some((item) => item.hidden) || searchEmptyState.style.display !== 'none') failures.push('帮助搜索: 有匹配时应过滤其他指南并隐藏空状态');
   search({ target: { value: '不存在的图片功能-987654321' } });
   if (searchableArticles.some((item) => !item.hidden) || searchEmptyState.style.display !== 'block') failures.push('帮助搜索: 无匹配时应显示空状态');
+  search({ target: { value: '白板' } });
+  const whiteboardMatches = searchableArticles.filter((item) => item.html.includes('id="mirror-whiteboard"') || item.html.includes('href="#mirror-whiteboard"'));
+  if (whiteboardMatches.length < 2 || whiteboardMatches.some((item) => item.hidden)) failures.push('帮助搜索: 白板应显示功能卡片和操作正文');
   search({ target: { value: '' } });
   if (searchableArticles.some((item) => item.hidden) || searchEmptyState.style.display !== 'none') failures.push('帮助搜索: 清空关键词后应恢复全部指南');
 }
