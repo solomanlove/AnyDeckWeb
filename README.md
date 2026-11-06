@@ -2,6 +2,9 @@
 
 AnyDeck 的产品官网、软件下载页与帮助中心。项目使用原生 HTML、CSS 与 JavaScript，无构建依赖，可直接部署到 GitHub Pages。
 
+- 公网地址：https://solomanlove.github.io/AnyDeckWeb/
+- GitHub 仓库：https://github.com/solomanlove/AnyDeckWeb
+
 ## 页面
 
 - `index.html`：产品与功能介绍
@@ -26,14 +29,18 @@ npm test
 
 ## 部署到 GitHub Pages
 
-1. 在 GitHub 创建空仓库，并添加为当前目录的 `origin`。
-2. 推送 `main` 分支。
-3. 在仓库 `Settings → Pages → Build and deployment` 中选择 `GitHub Actions`。
-4. `.github/workflows/pages.yml` 会部署仓库根目录。
+仓库通过 `.github/workflows/pages.yml` 自动发布：推送 `main` → Node.js 24 执行测试 → 生成 `dist/` → 上传 Pages artifact → 公网部署。测试失败会停止发布，Actions 中也支持手动运行。
+
+`dist/` 只包含官网页面、`assets/` 与 `.nojekyll`。打包不会改写页面和相对路径，测试、脚本、知识库等开发文件不进入网站目录。使用 Node.js 24 或更新版本可在本地验证相同产物：
 
 ```bash
-git remote add origin git@github.com:<owner>/<repository>.git
-git push -u origin main
+npm test
+npm run build
+git push origin main
 ```
+
+首次部署需在仓库 `Settings → Pages → Build and deployment` 中将 Source 设为 `GitHub Actions`。仓库使用现有 SSH 登录推送，workflow 使用 GitHub 提供的短期权限，无需额外配置 PAT。
+
+部署机制与回退说明见 [知识库](agent/knowledge/github-pages-deployment.md)。
 
 > 当前官网只提供源码下载。发布 AnyDeck 二进制安装包后，请同步更新 `download.html` 中的 Release 状态与下载入口。
