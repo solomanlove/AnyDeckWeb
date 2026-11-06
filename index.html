@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、投屏白板标注、端口转发、运行控制台、模拟器管理、应用分析与 AI MCP 自动化。">
+    <meta name="description" content="AnyDeck（万能控制台）是面向 Android、iOS 与 HarmonyOS 的桌面设备控制与调试工作台，支持设备连接、投屏白板标注、端口转发、运行控制台、模拟器管理、APK/APKS/AAB/XAPK 分析与 AI MCP 自动化。">
     <meta name="theme-color" content="#10b981">
     <title>AnyDeck（万能控制台）｜任何设备，一个控制台</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -132,7 +132,7 @@
           <div class="section-heading">
             <p class="eyebrow">开发者工作台</p>
             <h2>从虚拟设备到应用内部，<br>一处看清。</h2>
-            <p class="lede">统一管理三大平台模拟器，并深入查看 APK 与已安装应用的关键结构信息。</p>
+            <p class="lede">统一管理三大平台模拟器，并深入查看本地 Android 安装包与已安装应用的关键结构信息。</p>
           </div>
           <div class="developer-tool-grid">
             <article class="developer-tool-card emulator-card">
@@ -154,7 +154,9 @@
                 <div><span class="tool-kicker">应用信息分析</span><h3>应用分析</h3></div>
                 <a href="help.html#app-analysis">使用指南 →</a>
               </div>
-              <p>分析本地 APK 与设备中的已安装应用，集中查看版本、SDK、ABI、组件、权限、签名证书和原生库。</p>
+              <p>macOS 支持离线分析 APK、APKS、AAB、XAPK，查看版本、SDK、ABI、组件、权限、DEX、证书和原生库，也可分析设备中的已安装应用。</p>
+              <div class="platform-tags" aria-label="支持分析的 Android 安装包格式"><span>APK</span><span>APKS</span><span>AAB</span><span>XAPK</span></div>
+              <p>APKS / XAPK 展示分包和扩展文件，AAB 展示模块信息；这三种格式仅供分析，普通 APK 可选择设备安装。</p>
               <div class="analysis-summary">
                 <div><small>包名</small><strong>com.example.app</strong></div>
                 <div><small>目标 SDK</small><strong>36</strong></div>

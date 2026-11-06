@@ -59,6 +59,23 @@ const helpCards = [...help.matchAll(/<article class="help-card"[^>]*>[\s\S]*?<\/
 const editingCard = helpCards.find((card) => card.includes('href="#screenshot-editing"')) ?? '';
 const whiteboardArticle = help.match(/<article\b(?=[^>]*\bid="mirror-whiteboard")[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
 const whiteboardCard = helpCards.find((card) => card.includes('href="#mirror-whiteboard"')) ?? '';
+// 安装包能力必须能从首页进入，并准确区分离线分析与 APK 安装。
+const homeAnalysis = home.match(/<article class="developer-tool-card analysis-card">[\s\S]*?<\/article>/)?.[0] ?? '';
+const analysisArticle = help.match(/<article\b(?=[^>]*\bid="app-analysis")[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
+const analysisCard = helpCards.find((card) => card.includes('href="#app-analysis"')) ?? '';
+for (const format of ['APK', 'APKS', 'AAB', 'XAPK']) {
+  if (!homeAnalysis.includes(format) || !analysisArticle.includes(format) || !analysisCard.includes(format)) {
+    failures.push(`安装包分析: 首页、帮助卡片和正文必须介绍 ${format}`);
+  }
+}
+if (!homeAnalysis.includes('href="help.html#app-analysis"')) failures.push('index.html: 安装包分析缺少帮助入口');
+if (!/APKS、AAB、XAPK[^<]*仅支持分析/.test(analysisArticle) || !homeAnalysis.includes('这三种格式仅供分析')) {
+  failures.push('安装包分析: 必须明确 APKS/AAB/XAPK 仅供分析，不能暗示支持安装');
+}
+for (const detail of ['macOS', '打开方式 → AnyDeck', '普通 APK 可选择', 'OBB', '资源包', 'JAR 上传证书', '不等同于完整性验签', '不同扩展名需要分别设置']) {
+  if (!analysisArticle.includes(detail)) failures.push(`help.html: 安装包指南缺少操作或能力说明 ${detail}`);
+}
+
 if (!home.includes('href="help.html#mirror-whiteboard"') || !home.includes('id="mirror-whiteboard"')) failures.push('index.html: 缺少投屏白板功能展示与帮助入口');
 if (!helpSidebar.includes('href="#mirror-whiteboard"')) failures.push('help.html: 帮助目录缺少投屏白板入口');
 if (!whiteboardCard.includes('data-search-item') || !whiteboardArticle.includes('data-search-item')) failures.push('help.html: 投屏白板卡片与正文必须可被帮助搜索发现');
@@ -111,6 +128,13 @@ if (typeof search !== 'function') {
   search({ target: { value: '白板' } });
   const whiteboardMatches = searchableArticles.filter((item) => item.html.includes('id="mirror-whiteboard"') || item.html.includes('href="#mirror-whiteboard"'));
   if (whiteboardMatches.length < 2 || whiteboardMatches.some((item) => item.hidden)) failures.push('帮助搜索: 白板应显示功能卡片和操作正文');
+  for (const format of ['APK', 'APKS', 'aab', 'xapk']) {
+    search({ target: { value: ` ${format} ` } });
+    const analysisMatches = searchableArticles.filter((item) => item.html.includes('id="app-analysis"') || item.html.includes('href="#app-analysis"'));
+    if (analysisMatches.length !== 2 || analysisMatches.some((item) => item.hidden)) {
+      failures.push(`帮助搜索: ${format} 应同时显示安装包分析卡片和正文`);
+    }
+  }
   search({ target: { value: '' } });
   if (searchableArticles.some((item) => item.hidden) || searchEmptyState.style.display !== 'none') failures.push('帮助搜索: 清空关键词后应恢复全部指南');
 }

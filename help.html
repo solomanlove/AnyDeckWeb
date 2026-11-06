@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏与白板标注、代理、端口转发、截图图片编辑、AI MCP 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏与白板标注、代理、端口转发、截图图片编辑、APK/APKS/AAB/XAPK 安装包分析、AI MCP 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -39,7 +39,7 @@
               <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
-              <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>查看 APK 与已安装应用的 SDK、权限、签名和原生库。</p><a href="#app-analysis">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">◎</div><h3>应用分析</h3><p>离线分析 APK、APKS、AAB、XAPK，查看分包、模块、SDK、权限、证书与原生库。</p><a href="#app-analysis">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">›_</div><h3>运行控制台</h3><p>汇总桌面应用日志、异常堆栈与命令失败。</p><a href="#console">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">✦</div><h3>AI MCP</h3><p>让 Cursor、Claude Desktop 或 AI 智能体调用真实设备工具。</p><a href="#ai-mcp">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⌘</div><h3>定位问题</h3><p>组合系统日志、终端、进程和布局分析。</p><a href="#diagnostics">查看指南 →</a></article>
@@ -147,10 +147,12 @@ adb reverse tcp:8081 tcp:8081</code></pre>
             </article>
 
             <article class="article" id="app-analysis" data-search-item>
-              <h3>分析 APK 与已安装应用</h3>
-              <p>应用分析统一展示名称、包名或应用标识、版本、SDK、ABI、调试状态与文件信息，并按标签页查看组件、权限、元数据、DEX、签名证书和原生库。</p>
-              <ol><li>在应用列表双击目标应用进入详情；macOS 也可通过“访达”使用 AnyDeck 打开本地 APK。</li><li>先在概要区确认包名、版本、最低 SDK、目标 SDK 与 ABI。</li><li>切换组件、权限、签名和原生库标签页，使用搜索与复制快速定位信息。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
-              <p><strong>边界说明：</strong>本地 APK 的权限表示清单文件声明，签名页展示包内证书信息，但不等同于完整性验签；设备中应用的授权状态以当前用户和系统回读为准。</p>
+              <h3>分析 APK、APKS、AAB、XAPK 与已安装应用</h3>
+              <p>macOS 可通过“访达”使用 AnyDeck 打开本地 APK、APKS、AAB 或 XAPK。离线分析无需连接手机，也不需要额外安装 Android SDK 或 Java；查看已安装应用时，在设备应用列表双击目标应用进入详情。</p>
+              <ol><li>右键点击本地安装包，选择“打开方式 → AnyDeck”，进入独立详情窗口。</li><li>在概要区确认文件格式、包名、版本、最低 SDK、目标 SDK 与 ABI。</li><li>切换分包、模块、组件、权限、元数据、DEX、签名证书或原生库标签页，使用搜索与复制定位信息。</li><li>普通 APK 可选择已授权的在线 Android 设备安装；APKS、AAB、XAPK 当前仅支持分析，不提供安装操作。</li><li>已安装 Android 应用可继续执行启动、强停、授权或撤销等设备操作；HarmonyOS 使用独立 HDC 分析链路。</li></ol>
+              <ul><li><strong>APKS：</strong>查看内含 APK 清单，汇总同包名、同版本的组件与文件，并保留来源。不同设备变体不代表会同时安装全部内容。</li><li><strong>XAPK：</strong>在分包分析之外，查看 OBB 扩展文件与容器元数据；不会自动推送扩展文件。</li><li><strong>AAB：</strong>查看基础模块、功能模块、资源包、模块内 DEX 和原生库，以及 JAR 上传证书。AAB 需要生成适合设备的 APK 后才能安装。</li></ul>
+              <p>若要默认用 AnyDeck 打开某类安装包，可在“访达 → 显示简介 → 打开方式”中选择 AnyDeck 并点击“全部更改”；不同扩展名需要分别设置。</p>
+              <p><strong>证书与权限：</strong>本地安装包的权限表示清单文件声明，证书读取不等同于完整性验签；AAB 的上传证书可能与商店分发 APK 的签名不同。设备中应用的授权状态以当前用户和系统回读为准。</p>
             </article>
 
             <article class="article" id="console" data-search-item>
