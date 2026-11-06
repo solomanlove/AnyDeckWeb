@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏、代理、端口转发、运行控制台、AI MCP 和故障排查。">
+    <meta name="description" content="AnyDeck 帮助中心：Android、HarmonyOS 与 iOS USB 连接、设备投屏、代理、端口转发、运行控制台、截图图片编辑、AI MCP 和故障排查。">
     <meta name="theme-color" content="#10b981">
     <title>帮助中心｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,12 +20,12 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">帮助中心</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、AirPlay、MCP…" aria-label="搜索帮助文章" data-help-search></div></div>
+        <div class="container"><p class="eyebrow">帮助中心</p><h1>你好，需要什么帮助？</h1><p class="lede">查找 USB 调试、设备连接、投屏、截图图片编辑、代理、端口转发、AI MCP 和诊断工作流。搜索会即时过滤当前页中的指南。</p><div class="search-wrap"><input type="search" placeholder="搜索：USB 调试、截图编辑、马赛克…" aria-label="搜索帮助文章" data-help-search></div></div>
       </section>
 
       <section class="section">
         <div class="container help-layout">
-          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="usb-debugging.html">USB 调试指南</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
+          <aside class="help-sidebar" aria-label="帮助目录"><a href="#quick-start">快速开始</a><a href="versions.html">系统版本参考</a><a href="usb-debugging.html">USB 调试指南</a><a href="#connect-usb">USB 连接</a><a href="#connect-wifi">无线连接</a><a href="#network-tools">代理与端口转发</a><a href="#mirroring">设备投屏控制</a><a href="#screenshot-editing">截图图片编辑</a><a href="#airplay">iOS AirPlay</a><a href="#video-cast">视频投屏</a><a href="#emulator-management">模拟器管理</a><a href="#app-analysis">应用分析</a><a href="#console">运行控制台</a><a href="#ai-mcp">AI MCP</a><a href="#app-files">应用与文件</a><a href="#diagnostics">日志与诊断</a><a href="#troubleshooting">故障排查</a></aside>
           <div class="help-content">
             <div class="help-grid">
               <article class="help-card" data-search-item><div class="icon-box">01</div><h3>开始使用</h3><p>准备 ADB、连接第一台设备，并确认授权状态。</p><a href="#quick-start">查看指南 →</a></article>
@@ -34,6 +34,7 @@
               <article class="help-card" data-search-item><div class="icon-box">⌁</div><h3>连接设备</h3><p>了解 USB、TCP/IP、二维码和配对码连接。</p><a href="#connect-usb">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">⇄</div><h3>代理与端口</h3><p>配置 Android HTTP 代理，并管理正向与反向端口映射。</p><a href="#network-tools">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▣</div><h3>投屏控制</h3><p>打开独立窗口，使用鼠标、键盘与快捷控制。</p><a href="#mirroring">查看指南 →</a></article>
+              <article class="help-card" data-search-item><div class="icon-box">✎</div><h3>截图图片编辑</h3><p>用矩形、圆形、画笔和马赛克标注截图，完成后保存或复制图片。</p><a href="#screenshot-editing">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">◉</div><h3>iOS AirPlay</h3><p>把 iPhone 或 iPad 的画面与音频无线投到 Mac。</p><a href="#airplay">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▷</div><h3>视频投屏</h3><p>把 Android 或 HarmonyOS 视频 App 的内容投到电脑播放。</p><a href="#video-cast">查看指南 →</a></article>
               <article class="help-card" data-search-item><div class="icon-box">▤</div><h3>模拟器管理</h3><p>统一查看和控制 Android、HarmonyOS 与 iOS 模拟器。</p><a href="#emulator-management">查看指南 →</a></article>
@@ -78,6 +79,36 @@ adb reverse tcp:8081 tcp:8081</code></pre>
               <h3>打开投屏并控制设备</h3>
               <p>从设备行或工作区顶部打开投屏窗口。投屏窗口支持鼠标触控、键盘输入、返回、主页、电源、音量、旋转、截图与独立窗口缩放。</p>
               <ul><li>鼠标左键用于点击与拖动。</li><li>鼠标右键默认映射为 Android 返回键。</li><li>鼠标中键默认映射为 Android 主页键。</li><li>关闭窗口或断开设备时，AnyDeck 会结束对应会话并回收端口。</li></ul>
+            </article>
+
+            <article class="article" id="screenshot-editing" data-search-item>
+              <h3>编辑截图：标注与遮盖</h3>
+              <p>Android、HarmonyOS 与 iOS 的截图均可在 AnyDeck 内直接编辑，适合标记界面问题、圈出操作位置，或遮盖截图中的信息。</p>
+              <h4>进入编辑并保存</h4>
+              <ol>
+                <li>选择目标设备，打开“截图录屏”并获取一张截图。</li>
+                <li>点击右上角、布局分析开关左侧的铅笔按钮“编辑图片”。没有截图、正在加载或录屏时，入口不可用。</li>
+                <li>选择工具、颜色与线宽，按住鼠标左键拖动绘制。需要移动图片时，切换到“拖动画布”；底栏可放大、缩小、切换 1:1 或恢复适应窗口。</li>
+                <li>点击“完成”返回截图页，再使用“保存”或“复制”导出编辑后的 PNG。保存图片时也会同步复制到系统剪贴板。</li>
+              </ol>
+              <h4>工具怎么用</h4>
+              <ul>
+                <li><strong>矩形、圆形：</strong>拖出空心矩形或椭圆，标记重点区域；反向拖动也可绘制。</li>
+                <li><strong>画笔：</strong>按住鼠标自由绘制线条，单击可留下圆点。</li>
+                <li><strong>马赛克：</strong>沿鼠标笔迹像素化局部画面，可通过线宽调整涂抹范围。</li>
+                <li><strong>不透明遮盖：</strong>拖出实色矩形，完全盖住区域。账号、证件号码等需要彻底隐藏的内容建议使用此工具；马赛克仍可能保留可辨认的形状。</li>
+                <li><strong>颜色与线宽：</strong>提供红、黄、绿、蓝、黑、白六色；线宽按原图像素计算，缩放预览不会改变导出的实际宽度。</li>
+                <li><strong>撤销、重做、清空：</strong>一次落笔对应一次撤销。“清空本次标注”会移除本次会话的所有标注及撤销记录。每次会话最多 200 笔，达到上限后可撤销或清空再继续。</li>
+              </ul>
+              <h4>完成、取消与重新截图</h4>
+              <ul>
+                <li>“完成”将标注合成到当前图片。重新进入编辑时，以已完成的图片作为底图，上次会话的撤销记录不再保留。</li>
+                <li>点击“取消”且已有标注时，可选择“继续编辑”或“放弃编辑”；放弃后恢复进入本次编辑前的画面。</li>
+                <li>进入编辑会暂停连续截图；完成或取消后仍保持暂停，需要时手动重新开启。刷新截图成功后，当前编辑结果会被新截图替换，请先保存或复制需要保留的图片。</li>
+                <li>编辑期间暂时收起布局分析侧栏，并停用刷新、录屏与布局分析切换。完成或取消后恢复原工作区模式。</li>
+                <li>切换普通工具 Tab 会保留草稿；切换设备或离开设备工作区会放弃尚未完成的标注。</li>
+              </ul>
+              <p><strong>导出说明：</strong>PNG 保留原图分辨率与方向。旋转仅用于预览，不会改变导出方向；工具栏、布局分析高亮和缩放比例不会写入图片。</p>
             </article>
 
             <article class="article" id="airplay" data-search-item>
@@ -151,7 +182,7 @@ adb reverse tcp:8081 tcp:8081</code></pre>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="usb-debugging.html">USB 调试指南</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">问题反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck 贡献者。</span><span>最后更新：2026-10-29</span></div></div></footer>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="assets/images/app-logo.png" alt=""><span>AnyDeck</span></a><p>轻量级移动设备调试与管理工作台。</p></div><div><h3>帮助</h3><div class="footer-links"><a href="#quick-start">快速开始</a><a href="usb-debugging.html">USB 调试指南</a><a href="#troubleshooting">故障排查</a></div></div><div><h3>社区</h3><div class="footer-links"><a href="https://github.com/solomanlove/AnyDeck" target="_blank" rel="noreferrer">GitHub</a><a href="https://github.com/solomanlove/AnyDeck/issues" target="_blank" rel="noreferrer">问题反馈</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> AnyDeck 贡献者。</span><span>最后更新：2026-11-06</span></div></div></footer>
     <script src="assets/js/site.js" defer></script>
   </body>
 </html>

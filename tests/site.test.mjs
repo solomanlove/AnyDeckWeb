@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
+import { runInNewContext } from 'node:vm';
 
 const root = resolve(import.meta.dirname, '..');
 const pages = ['index.html', 'download.html', 'help.html', 'versions.html', 'usb-debugging.html'];
@@ -31,7 +32,7 @@ for (const page of pages) {
 }
 
 const help = readFileSync(join(root, 'help.html'), 'utf8');
-for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
+for (const id of ['quick-start', 'connect-usb', 'connect-wifi', 'network-tools', 'mirroring', 'screenshot-editing', 'airplay', 'video-cast', 'emulator-management', 'app-analysis', 'console', 'ai-mcp', 'app-files', 'diagnostics', 'troubleshooting']) {
   if (!help.includes(`id="${id}"`)) failures.push(`help.html: 缺少帮助章节 ${id}`);
 }
 
@@ -50,6 +51,59 @@ if (!styleImports.includes('@import url("usb-debugging.css")')) {
 }
 
 const home = readFileSync(join(root, 'index.html'), 'utf8');
+
+// 编辑帮助需要可从首页、目录和搜索找到，且说明实际操作和结果保留边界。
+const editingArticle = help.match(/<article\b(?=[^>]*\bid="screenshot-editing")[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
+const helpSidebar = help.match(/<aside class="help-sidebar"[^>]*>[\s\S]*?<\/aside>/)?.[0] ?? '';
+const helpCards = [...help.matchAll(/<article class="help-card"[^>]*>[\s\S]*?<\/article>/g)].map((match) => match[0]);
+const editingCard = helpCards.find((card) => card.includes('href="#screenshot-editing"')) ?? '';
+if (!home.includes('href="help.html#screenshot-editing"')) failures.push('index.html: 缺少图片编辑帮助入口');
+if (!helpSidebar.includes('href="#screenshot-editing"')) failures.push('help.html: 帮助目录缺少图片编辑入口');
+if (!editingCard.includes('data-search-item') || !editingArticle.includes('data-search-item')) {
+  failures.push('help.html: 图片编辑卡片与正文必须可被帮助搜索发现');
+}
+if (!/<ol>[\s\S]*?<li>/.test(editingArticle)) failures.push('help.html: 图片编辑指南缺少有序操作步骤');
+for (const editingCopy of ['编辑图片', '矩形', '圆形', '画笔', '马赛克', '不透明遮盖', '撤销', '重做', '完成', '保存', '复制', '原图', '200']) {
+  if (!editingArticle.includes(editingCopy)) failures.push(`help.html: 图片编辑正文缺少操作说明 ${editingCopy}`);
+}
+for (const [label, pattern] of [
+  ['连续截图暂停', /连续截图[\s\S]*?暂停/],
+  ['刷新后编辑结果清理', /(?:刷新|重新截图)[\s\S]*?(?:清除|清空|覆盖|替换)/],
+  ['会话撤销历史', /(?:重新进入|再次进入)[\s\S]*?撤销[\s\S]*?(?:不保留|不再保留|不会保留|无法)/],
+  ['预览旋转和导出方向', /旋转[\s\S]*?预览[\s\S]*?导出[\s\S]*?方向/],
+]) {
+  if (!pattern.test(editingArticle)) failures.push(`help.html: 图片编辑正文缺少${label}说明`);
+}
+
+// 执行真实搜索脚本，用页面中的卡片和正文作为输入，验证新增指南不只出现在目录。
+const searchableArticles = [...help.matchAll(/<article\b[^>]*\bdata-search-item\b[^>]*>[\s\S]*?<\/article>/g)].map((match) => ({
+  html: match[0],
+  textContent: match[0].replace(/<[^>]*>/g, ' '),
+  hidden: false,
+}));
+const searchHandlers = new Map();
+const searchInput = { addEventListener: (event, handler) => searchHandlers.set(event, handler) };
+const searchEmptyState = { style: { display: 'none' } };
+runInNewContext(readFileSync(join(root, 'assets/js/site.js'), 'utf8'), {
+  document: {
+    querySelector: (selector) => selector === '[data-help-search]' ? searchInput : selector === '[data-empty-state]' ? searchEmptyState : null,
+    querySelectorAll: (selector) => selector === '[data-search-item]' ? searchableArticles : [],
+  },
+});
+const search = searchHandlers.get('input');
+if (typeof search !== 'function') {
+  failures.push('site.js: 帮助搜索未注册 input 事件');
+} else {
+  search({ target: { value: ' 马赛克 ' } });
+  const editingMatches = searchableArticles.filter((item) => item.html.includes('id="screenshot-editing"') || item.html.includes('href="#screenshot-editing"'));
+  if (editingMatches.length !== 2 || editingMatches.some((item) => item.hidden)) failures.push('帮助搜索: 马赛克应同时显示图片编辑卡片和正文');
+  if (!searchableArticles.some((item) => item.hidden) || searchEmptyState.style.display !== 'none') failures.push('帮助搜索: 有匹配时应过滤其他指南并隐藏空状态');
+  search({ target: { value: '不存在的图片功能-987654321' } });
+  if (searchableArticles.some((item) => !item.hidden) || searchEmptyState.style.display !== 'block') failures.push('帮助搜索: 无匹配时应显示空状态');
+  search({ target: { value: '' } });
+  if (searchableArticles.some((item) => item.hidden) || searchEmptyState.style.display !== 'none') failures.push('帮助搜索: 清空关键词后应恢复全部指南');
+}
+
 for (const positioning of ['任何设备，<br>一个控制台。', 'Any + Deck', 'Android、iOS 与 HarmonyOS', '面向所有移动操作系统的万能桌面控制台。']) {
   if (!home.includes(positioning)) failures.push(`index.html: 缺少品牌定位 ${positioning}`);
 }
