@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="获取 AnyDeck 桌面端源码、查看 Release 状态与 macOS、Windows、Linux 构建方式。">
+    <meta name="description" content="下载 AnyDeck v1.0.0 macOS Apple Silicon 安装包，查看安装、首次打开说明与设备工具要求。">
     <meta name="theme-color" content="#10b981">
     <title>软件下载｜AnyDeck</title>
     <link rel="icon" href="assets/images/app-logo.png">
@@ -20,17 +20,33 @@
 
     <main>
       <section class="page-hero">
-        <div class="container"><p class="eyebrow">软件下载</p><h1>选择适合你的 AnyDeck。</h1><p class="lede">AnyDeck 面向 macOS、Windows 与 Linux。当前公开仓库尚未发布二进制安装包，可先下载源码自行构建。</p></div>
+        <div class="container"><p class="eyebrow">软件下载</p><h1>选择适合你的 AnyDeck。</h1><p class="lede">AnyDeck v1.0.0 已提供 macOS Apple Silicon 安装包。Windows 与 Linux 暂未提供安装包，可从源码构建。</p></div>
       </section>
 
       <section class="section">
         <div class="container">
-          <div class="release-notice" role="status"><span>⚠</span><div><strong>公开安装包尚未发布</strong><span>截至 2026-10-26，官方 GitHub 发布页暂无可下载版本。下面的系统按钮会保持禁用，避免提供无效链接。</span></div></div>
+          <div class="release-notice" role="status"><span>ⓘ</span><div><strong>macOS v1.0.0 已发布</strong><span>此版本使用免费 ad-hoc 签名，未经 Apple 公证。首次打开可能需要手动允许，请查看下方<a class="text-link" href="#macos-installation">安装与首次打开说明</a>。</span></div></div>
           <div class="download-grid">
-            <article class="download-card"><div class="os"><span>●</span> macOS</div><p>适用于 Apple 芯片与 Intel 芯片 Mac。原生投屏链路使用 VideoToolbox、AudioQueue 与 Metal。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
+            <article class="download-card" id="macos-download"><div class="os"><span>●</span> macOS</div><p>适用于 Apple Silicon（M1 或更新）Mac，需要 macOS 12 或更新系统。此安装包不适用于 Intel Mac。</p><div class="meta">v1.0.0 · arm64 · DMG 安装包</div><a class="button primary" href="https://github.com/solomanlove/AnyDeck/releases/download/v1.0.0/AnyDeck-macOS-arm64.dmg">下载 macOS DMG</a></article>
             <article class="download-card"><div class="os"><span>⊞</span> Windows</div><p>适用于 Windows 桌面环境，覆盖 ADB 设备连接、应用、文件、日志与终端等工作流。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
             <article class="download-card"><div class="os"><span>◇</span> Linux</div><p>提供 Linux 桌面目标，可从源码构建并接入本机 Android 平台工具。</p><div class="meta">安装包：等待首个 GitHub 发布版本</div><span class="button disabled" aria-disabled="true">暂未开放下载</span></article>
           </div>
+          <p class="hero-note">其他 macOS 下载：<a class="text-link" href="https://github.com/solomanlove/AnyDeck/releases/download/v1.0.0/AnyDeck-macOS-arm64.zip">ZIP 压缩包</a> · <a class="text-link" href="https://github.com/solomanlove/AnyDeck/releases/download/v1.0.0/SHA256SUMS">SHA-256 校验清单</a> · <a class="text-link" href="https://github.com/solomanlove/AnyDeck/releases/tag/v1.0.0" target="_blank" rel="noreferrer">查看 v1.0.0 Release ↗</a></p>
+        </div>
+      </section>
+
+      <section class="section" id="macos-installation">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">macOS 安装指南</p><h2>安装与首次打开。</h2><p class="lede">从官方 GitHub Release 下载安装包，按以下步骤完成安装。无需安装 Flutter 或 Rust 开发环境。</p></div>
+          <article class="requirement" aria-label="macOS 安装步骤">
+            <ol>
+              <li><p><strong>安装到“应用程序”。</strong>打开下载的 DMG，将 AnyDeck 拖到 Applications 文件夹；如果使用 ZIP，先解压，再将 AnyDeck.app 拖到“应用程序”。</p></li>
+              <li><p><strong>尝试打开 AnyDeck。</strong>在“应用程序”中双击打开。如果提示无法验证开发者或 Apple 无法检查恶意软件，先关闭提示。</p></li>
+              <li><p><strong>按需允许首次打开。</strong>确认安装包来自上方官方 Release 后，进入“系统设置 → 隐私与安全性”，找到 AnyDeck 的拦截提示，点击“仍要打开”，再按系统提示确认。后续通常可以正常打开。</p></li>
+            </ol>
+            <p>此 ad-hoc 版本暂不支持激活 macOS 系统虚拟摄像头。连接手机仍需下方对应的设备工具及手机调试授权。</p>
+            <a class="text-link" href="https://support.apple.com/zh-cn/102445" target="_blank" rel="noreferrer">Apple 官方：安全地打开 Mac 上的 App ↗</a>
+          </article>
         </div>
       </section>
 
@@ -50,7 +66,7 @@ flutter run -d macos</code></pre>
           <div class="section-heading"><p class="eyebrow">环境要求</p><h2>运行前准备。</h2><p class="lede">基础 Android 调试依赖 ADB；其他平台或扩展能力按需准备对应工具链。</p></div>
           <div class="requirements">
             <article class="requirement"><h3>Android / ADB</h3><p>安装 Android SDK platform-tools，并确保终端可执行 <code>adb devices</code>。</p></article>
-            <article class="requirement"><h3>屏幕投射</h3><p>项目内包含投屏服务组件；本地构建时按仓库脚本准备 Rust 原生桥接。</p></article>
+            <article class="requirement"><h3>屏幕投射</h3><p>发布安装包已包含投屏服务端和 Rust 原生引擎；手机连接仍需对应的 ADB / HDC 工具及调试授权。</p></article>
             <article class="requirement"><h3>HarmonyOS / HDC</h3><p>管理 HarmonyOS NEXT 设备时，需要 DevEco Studio 提供的 HDC 工具链。</p></article>
             <article class="requirement"><h3>iOS / go-ios</h3><p>iOS 连接与调试需要 go-ios；部分投屏与 Web Inspector 能力当前依赖 macOS。</p></article>
           </div>

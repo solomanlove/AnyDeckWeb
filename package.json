@@ -4,7 +4,7 @@
   "private": true,
   "description": "AnyDeck 产品官网、下载页与帮助中心",
   "scripts": {
-    "test": "node tests/site.test.mjs && node --test tests/deployment.test.mjs",
+    "test": "node tests/site.test.mjs && node --test tests/deployment.test.mjs tests/download.test.mjs",
     "build": "node scripts/build-site.mjs",
     "serve": "python3 -m http.server 4173"
   }
