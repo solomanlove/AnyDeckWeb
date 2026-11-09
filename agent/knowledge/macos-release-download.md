@@ -33,3 +33,5 @@ git push origin main
 复用现有 macOS 卡片与公共按钮样式，增加 Intel DMG 与 ZIP，不改 CSS 或截图。下载链接切换到 v1.0.1；需等待两种架构原生 CI、签名与启动检查及正式 Release 成功后才上线。
 
 本地 `npm test`（5 页内容检查、6 项 Node tests）与 `npm run build` 通过；现有 Chrome 标签页的桌面及 390px 手机宽度预览中，两个 DMG 按钮正常显示，临时 viewport 已恢复。
+
+2026-11-09 v1.0.1 正式 Release 已确认公开（非 Draft / Pre-release），包含两架构 DMG/ZIP、安装说明与 SHA256SUMS 共 6 项附件，公开附件 digest 与校验清单一致。[发布恢复 CI](https://github.com/solomanlove/AnyDeck/actions/runs/42639483206) 从与 Tag 完全相同 commit 的[成功双架构构建](https://github.com/solomanlove/AnyDeck/actions/runs/42630601956)取得产物，重新通过校验和、35 个 Mach-O/架构/签名校验及 Intel 启动检查后发布。官网仅推送本次下载入口改动，保留另一项尚未推送的局域网共享本地提交。
