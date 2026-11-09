@@ -6,17 +6,22 @@ import test from 'node:test';
 const html = readFileSync(new URL('../download.html', import.meta.url), 'utf8');
 const release = 'https://github.com/solomanlove/AnyDeck/releases';
 
-test('macOS v1.0.0 提供可操作的固定版本 DMG、ZIP 和校验入口', () => {
+test('macOS v1.0.1 提供可操作的固定版本 DMG、ZIP 和校验入口', () => {
   const card = html.match(/<article\b[^>]*id="macos-download"[^>]*>[\s\S]*?<\/article>/)?.[0] ?? '';
   assert.match(card, /Apple Silicon（M1 或更新）/);
   assert.match(card, /macOS 12/);
-  assert.match(card, /不适用于 Intel Mac/);
-  assert.ok(card.includes(`href="${release}/download/v1.0.0/AnyDeck-macOS-arm64.dmg"`));
+  assert.match(card, /与 Intel Mac/);
+  assert.match(card, /关于本机/);
+  assert.match(card, /下载 Apple Silicon DMG/);
+  assert.match(card, /下载 Intel DMG/);
+  assert.ok(card.includes(`href="${release}/download/v1.0.1/AnyDeck-macOS-x86_64.dmg"`));
+  assert.doesNotMatch(card, /不适用于 Intel/);
+  assert.ok(card.includes(`href="${release}/download/v1.0.1/AnyDeck-macOS-arm64.dmg"`));
   assert.doesNotMatch(card, /aria-disabled|class="button disabled"/);
-  for (const asset of ['AnyDeck-macOS-arm64.zip', 'SHA256SUMS']) {
-    assert.ok(html.includes(`href="${release}/download/v1.0.0/${asset}"`));
+  for (const asset of ['AnyDeck-macOS-arm64.zip', 'AnyDeck-macOS-x86_64.zip', 'SHA256SUMS']) {
+    assert.ok(html.includes(`href="${release}/download/v1.0.1/${asset}"`));
   }
-  assert.ok(html.includes(`href="${release}/tag/v1.0.0"`));
+  assert.ok(html.includes(`href="${release}/tag/v1.0.1"`));
   assert.doesNotMatch(html, /公开安装包尚未发布|当前公开仓库尚未发布|截至 2026-10-26/);
 });
 

@@ -1,8 +1,8 @@
-# macOS v1.0.0 下载入口与安装说明
+# macOS 双架构下载入口与安装说明
 
 ## 需求与范围
 
-将下载页由“安装包尚未发布”更新为已发布的 macOS v1.0.0。启用固定版本 DMG 主按钮，提供 ZIP、SHA-256 与 Release 入口；说明 Apple Silicon（M1 或更新）、macOS 12 或更新系统及 Intel 不适用。Windows、Linux 维持未开放下载状态。
+v1.0.1 下载页分别提供 Apple Silicon（arm64）与 Intel（x86_64）的固定版本 DMG 按钮和 ZIP 链接，并提供共用 SHA-256 与 Release 入口。要求 macOS 12 或更新，用户按“关于本机”的芯片或处理器选择对应版本。Windows、Linux 维持未开放下载状态。
 
 下载入口更新限于下载页；后续 scrcpy 依赖纠错同步覆盖首页、帮助页与下载页。不改截图或图片资源。
 
@@ -27,3 +27,9 @@ git push origin main
 推送后由既有 GitHub Pages Workflow 发布；检查公网下载页文案与链接，并在桌面和手机宽度预览安装步骤。
 
 2026-11-09 本地验证：5 个页面内容检查、5 项 Node tests 与静态打包均通过，本地 HTTP 预览可返回页面。内置浏览器初始化连续超时，桌面与手机宽度的视觉验收尚未完成；本次复用公共样式，没有修改 CSS 或图片。
+
+## v1.0.1 双架构更新
+
+复用现有 macOS 卡片与公共按钮样式，增加 Intel DMG 与 ZIP，不改 CSS 或截图。下载链接切换到 v1.0.1；需等待两种架构原生 CI、签名与启动检查及正式 Release 成功后才上线。
+
+本地 `npm test`（5 页内容检查、6 项 Node tests）与 `npm run build` 通过；现有 Chrome 标签页的桌面及 390px 手机宽度预览中，两个 DMG 按钮正常显示，临时 viewport 已恢复。
