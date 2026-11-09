@@ -41,3 +41,12 @@ test('首次打开说明覆盖 DMG、ZIP、开发者提示和系统安全设置�
   assert.ok(html.includes('href="#macos-installation"'));
   assert.doesNotMatch(instructions, /spctl|xattr|关闭.*安全保护/);
 });
+
+test('设备准备不将外部 scrcpy 列为内嵌投屏的必装依赖', () => {
+  for (const page of ['index.html', 'help.html', 'download.html']) {
+    const content = readFileSync(new URL(`../${page}`, import.meta.url), 'utf8');
+    assert.match(content, /内嵌投屏无需另外安装 scrcpy/);
+    assert.doesNotMatch(content, /brew install android-platform-tools scrcpy/);
+  }
+  assert.match(html, /电脑本地录制/);
+});
